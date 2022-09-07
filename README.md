@@ -13,6 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ---
 
 ## To develop, you need to execute this command.
+
 ```bash
 npx simple-git-hooks
 ```
