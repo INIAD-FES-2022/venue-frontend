@@ -1,10 +1,5 @@
 {
-    "extends": "./tsconfig.json",
-    "include": [
-        "pages",
-        "components",
-    ],
-    "exclude": [
-        "node_modules"
-    ]
+  "extends": "./tsconfig.json",
+  "include": ["pages", "components", "services", "types"],
+  "exclude": ["node_modules"]
 }
