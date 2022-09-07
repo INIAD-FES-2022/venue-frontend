@@ -21,6 +21,7 @@
     "@types/react-dom": "18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.36.2",
     "@typescript-eslint/parser": "^5.36.2",
+    "autoprefixer": "^10.4.8",
     "eslint": "8.23.0",
     "eslint-config-airbnb": "^19.0.4",
     "eslint-config-airbnb-typescript": "^17.0.0",
@@ -37,15 +38,15 @@
     "typescript": "4.8.2"
   },
   "simple-git-hooks": {
-      "pre-commit": "npx lint-staged"
+    "pre-commit": "npx lint-staged"
   },
   "lint-staged": {
-      "*.{js,jsx,ts,tsx}": [
-          "prettier --write --loglevel=error",
-          "eslint --cache --fix --quiet"
-      ],
-      "*.{html,css,scss,gql,graphql,json}": [
-          "prettier --write --loglevel=error"
-      ]
+    "*.{js,jsx,ts,tsx}": [
+      "prettier --write --loglevel=error",
+      "eslint --cache --fix --quiet"
+    ],
+    "*.{html,css,scss,gql,graphql,json}": [
+      "prettier --write --loglevel=error"
+    ]
   }
 }
