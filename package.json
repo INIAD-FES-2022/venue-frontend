@@ -35,5 +35,17 @@
     "simple-git-hooks": "^2.8.0",
     "tailwindcss": "^3.1.8",
     "typescript": "4.8.2"
+  },
+  "simple-git-hooks": {
+      "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+      "*.{js,jsx,ts,tsx}": [
+          "prettier --write --loglevel=error",
+          "eslint --cache --fix --quiet"
+      ],
+      "*.{html,css,scss,gql,graphql,json}": [
+          "prettier --write --loglevel=error"
+      ]
   }
 }
