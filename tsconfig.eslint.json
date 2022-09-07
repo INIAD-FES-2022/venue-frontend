@@ -1,5 +1,5 @@
 {
   "extends": "./tsconfig.json",
-  "include": ["pages", "components", "services", "types"],
+  "include": ["pages", "components", "services", "types", "styles"],
   "exclude": ["node_modules"]
 }
