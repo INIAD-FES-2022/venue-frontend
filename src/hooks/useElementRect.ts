@@ -14,10 +14,12 @@ export const useElementRect = (
     } else {
       setRect(undefined);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
     updateRect(); // initial call
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return {
