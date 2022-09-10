@@ -1,12 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { useFetchAllPrograms } from '../../../hooks/useFetchAllPrograms';
+import { useElementRect } from '../../../hooks/useElementRect';
 import * as styles from './TopPageProgramIntroduction.css';
 
 export const TopPageProgramIntroduction = () => {
   const { data, isLoading, isError } = useFetchAllPrograms();
+  const sliderRef = useRef(null);
+  const { rect, updateRect } = useElementRect(sliderRef);
   const [sliderSetting, setSliderSetting] = useState({
     dots: true,
     infinite: true,
@@ -18,20 +21,30 @@ export const TopPageProgramIntroduction = () => {
   });
 
   useEffect(() => {
-    if (data) {
+    window.addEventListener('resize', updateRect);
+
+    return () => {
+      window.removeEventListener('resize', updateRect);
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  useEffect(() => {
+    if (rect?.width && data) {
+      const divNum = 300;
       setSliderSetting((s) => {
-        const rev = s.slidesToShow;
+        const displayNum = Math.floor(rect.width / divNum);
 
         return {
           ...s,
-          slidesToShow: Math.min(data.length, rev),
+          slidesToShow: Math.min(displayNum, data.length),
         };
       });
     }
-  }, [data]);
+  }, [rect?.width, data]);
 
   return (
-    <div className={styles.container}>
+    <div className={styles.container} ref={sliderRef}>
       <h2 className={styles.caption}>企画紹介</h2>
       {(() => {
         let result;
