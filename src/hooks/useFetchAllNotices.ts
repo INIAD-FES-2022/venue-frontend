@@ -14,7 +14,7 @@ type Notice = {
 
 type Response = Notice[];
 
-export const useFetchAllPrograms = (params: QueryParams = {}) => {
+export const useFetchAllNotices = (params: QueryParams = {}) => {
   const path = 'notice/';
   const key = 'allNotices';
 
