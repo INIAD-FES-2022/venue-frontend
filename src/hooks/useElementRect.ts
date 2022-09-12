@@ -7,7 +7,7 @@ export const useElementRect = <T extends HTMLElement>(
   const [rect, setRect] = useState<DOMRect | undefined>(undefined);
 
   const updateRect = useCallback(() => {
-    if (ref && ref.current) {
+    if (ref?.current) {
       setRect(ref.current.getBoundingClientRect());
     } else {
       setRect(undefined);
