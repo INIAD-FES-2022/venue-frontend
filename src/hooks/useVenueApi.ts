@@ -12,10 +12,12 @@ export const useVenueApi = <
     data,
     isLoading,
     isError,
+    error,
   }: {
     data: Response | undefined;
     isLoading: boolean;
     isError: boolean;
+    error: Error | null;
   } = useQuery([key, params], async () => {
     const query = new URLSearchParams(params).toString();
     let url: string;
@@ -30,11 +32,11 @@ export const useVenueApi = <
 
     const response = await fetch(url, { method: 'GET' });
     if (!response.ok) {
-      throw new Error(`Failed to fetch ${path}`);
+      throw new Error(`${response.status}`);
     }
 
     return response.json();
   });
 
-  return { data, isLoading, isError };
+  return { data, isLoading, isError, error };
 };
