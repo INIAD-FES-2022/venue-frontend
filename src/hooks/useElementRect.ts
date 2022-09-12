@@ -15,7 +15,7 @@ export const useElementRect = (
       setRect(undefined);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
+  }, [ref]);
 
   useEffect(() => {
     updateRect(); // initial call

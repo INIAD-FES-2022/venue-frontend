@@ -1,6 +1,8 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
+import { Sample } from '../components/elements/Sample/Sample';
+import { Sample2 } from '../components/elements/Sample2/Sample2';
 
 const Home: NextPage = () => (
   <div className="flex min-h-screen flex-col items-center justify-center py-2">
@@ -16,6 +18,8 @@ const Home: NextPage = () => (
           Next.js!
         </a>
       </h1>
+      <Sample />
+      <Sample2 />
 
       <p className="mt-3 text-2xl">
         Get started by editing{' '}
