@@ -9,7 +9,7 @@ import * as styles from './TopPageProgramIntroduction.css';
 export const TopPageProgramIntroduction = () => {
   const { data, isLoading, isError } = useFetchAllPrograms();
   const sliderRef = useRef(null);
-  const { rect, updateRect } = useElementRect(sliderRef);
+  const rect = useElementRect<HTMLDivElement>(sliderRef, ['resize']);
   const [sliderSetting, setSliderSetting] = useState({
     dots: true,
     infinite: true,
@@ -19,15 +19,6 @@ export const TopPageProgramIntroduction = () => {
     autoplay: true,
     pauseOnHover: true,
   });
-
-  useEffect(() => {
-    window.addEventListener('resize', updateRect);
-
-    return () => {
-      window.removeEventListener('resize', updateRect);
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
 
   useEffect(() => {
     if (rect?.width && data) {
