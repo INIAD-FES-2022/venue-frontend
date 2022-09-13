@@ -1,14 +1,5 @@
 import { useVenueApi } from './useVenueApi';
-
-type QueryParams = Record<string, never>;
-
-type Group = {
-  uuid: string;
-  name: string;
-  logo: string;
-};
-
-type Response = Group[];
+import { QueryParams, Response } from '../types/api/allGroups';
 
 export const useFetchAllGroups = () => {
   const path = 'group/';

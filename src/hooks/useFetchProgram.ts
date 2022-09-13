@@ -1,30 +1,5 @@
 import { useVenueApi } from './useVenueApi';
-
-type QueryParams = Record<string, never>;
-
-type Group = {
-  uuid: string;
-  name: string;
-};
-
-type Category = {
-  uuid: string;
-  name: string;
-};
-
-type Response = {
-  group: Group;
-  title: string;
-  description: string;
-  startAt: string; // ISO8601
-  endAt: string; // ISO8601
-  streamingUrl: string;
-  relatedUrl: string[];
-  logo: string;
-  category: Category[];
-  place: string;
-  images: string[];
-};
+import { QueryParams, Response } from '../types/api/program';
 
 export const useFetchProgram = (uuid: string) => {
   const path = `program/${uuid}/`;
