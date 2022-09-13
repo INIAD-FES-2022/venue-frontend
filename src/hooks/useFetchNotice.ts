@@ -1,22 +1,19 @@
 import { useVenueApi } from './useVenueApi';
 
-type QueryParams = {
-  'category'?: string;
-  'sort-by'?: 'category' | 'title' | 'date' | '-category' | '-title' | '-date';
-};
+type QueryParams = Record<string, never>;
 
-type Notice = {
+type Response = {
   uuid: string;
   title: string;
   date: string; // ISO8601
   category: string[];
+  content: string;
+  relatedUrl: string[];
 };
 
-type Response = Notice[];
-
-export const useFetchAllNotices = (params: QueryParams = {}) => {
-  const path = 'notice/';
-  const key = 'allNotices';
+export const useFetchNotice = (uuid: string) => {
+  const path = `notice/${uuid}/`;
+  const key = `notice/${uuid}/`;
 
   const {
     data,
@@ -28,7 +25,7 @@ export const useFetchAllNotices = (params: QueryParams = {}) => {
     isLoading: boolean;
     isError: boolean;
     error: Error | null;
-  } = useVenueApi<QueryParams, Response>(key, path, params);
+  } = useVenueApi<QueryParams, Response>(key, path, {});
 
   return { data, isLoading, isError, error };
 };
