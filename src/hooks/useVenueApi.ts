@@ -8,35 +8,32 @@ export const useVenueApi = <
   path: string,
   params: QueryParams,
 ) => {
-  const {
-    data,
-    isLoading,
-    isError,
-    error,
-  }: {
-    data: Response | undefined;
-    isLoading: boolean;
-    isError: boolean;
-    error: Error | null;
-  } = useQuery([key, params], async () => {
-    const query = new URLSearchParams(params).toString();
-    let url: string;
+  if (!process.env.NEXT_PUBLIC_API_ROOT) {
+    throw new Error('NEXT_PUBLIC_API_ROOT is not defined');
+  } else {
+    const API_ROOT = process.env.NEXT_PUBLIC_API_ROOT;
+    const {
+      data,
+      isLoading,
+      isError,
+      error,
+    }: {
+      data: Response | undefined;
+      isLoading: boolean;
+      isError: boolean;
+      error: Error | null;
+    } = useQuery([key, params], async () => {
+      const query = new URLSearchParams(params).toString();
+      const url = `${API_ROOT}${path}${query ? `?${query}` : ''}`;
 
-    if (process.env.NEXT_PUBLIC_API_ROOT) {
-      url = `${process.env.NEXT_PUBLIC_API_ROOT}${path}${
-        query ? `?${query}` : ''
-      }`;
-    } else {
-      throw new Error('API_ROOT is not defined');
-    }
+      const response = await fetch(url, { method: 'GET' });
+      if (response.status !== 200) {
+        throw new Error(`${response.status}`);
+      }
 
-    const response = await fetch(url, { method: 'GET' });
-    if (!response.ok) {
-      throw new Error(`${response.status}`);
-    }
+      return response.json();
+    });
 
-    return response.json();
-  });
-
-  return { data, isLoading, isError, error };
+    return { data, isLoading, isError, error };
+  }
 };
