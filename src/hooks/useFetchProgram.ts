@@ -7,6 +7,11 @@ type Group = {
   name: string;
 };
 
+type Category = {
+  uuid: string;
+  name: string;
+};
+
 type Response = {
   group: Group;
   title: string;
@@ -16,7 +21,7 @@ type Response = {
   streamingUrl: string;
   relatedUrl: string[];
   logo: string;
-  category: string[];
+  category: Category[];
   place: string;
   images: string[];
 };

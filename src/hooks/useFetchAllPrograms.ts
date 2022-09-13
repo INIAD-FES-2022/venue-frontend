@@ -1,11 +1,11 @@
 import { useVenueApi } from './useVenueApi';
 
 type QueryParams = {
-  'category'?: string;
+  'category'?: string; // uuid
   'place'?: string;
   'start-at'?: string; // ISO8601
   'end-at'?: string; // ISO8601
-  'group'?: string;
+  'group'?: string; // uuid
   'sort-by'?:
     | 'category'
     | 'startAt'
@@ -19,14 +19,25 @@ type QueryParams = {
     | '-group';
 };
 
+type Group = {
+  uuid: string;
+  name: string;
+};
+
+type Category = {
+  uuid: string;
+  name: string;
+};
+
 type Program = {
   uuid: string;
   title: string;
   startAt: string; // ISO8601
   endAt: string; // ISO8601
   place: string;
-  logo: string;
+  group: Group;
   thumbnail: string;
+  category: Category[];
 };
 
 type Response = Program[];

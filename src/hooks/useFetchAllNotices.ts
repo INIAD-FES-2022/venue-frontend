@@ -1,15 +1,20 @@
 import { useVenueApi } from './useVenueApi';
 
 type QueryParams = {
-  'category'?: string;
+  'category'?: string; // uuid
   'sort-by'?: 'category' | 'title' | 'date' | '-category' | '-title' | '-date';
+};
+
+type Category = {
+  uuid: string;
+  name: string;
 };
 
 type Notice = {
   uuid: string;
   title: string;
   date: string; // ISO8601
-  category: string[];
+  category: Category[];
 };
 
 type Response = Notice[];

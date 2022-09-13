@@ -2,11 +2,16 @@ import { useVenueApi } from './useVenueApi';
 
 type QueryParams = Record<string, never>;
 
+type Category = {
+  uuid: string;
+  name: string;
+};
+
 type Response = {
   uuid: string;
   title: string;
   date: string; // ISO8601
-  category: string[];
+  category: Category[];
   content: string;
   relatedUrl: string[];
 };
