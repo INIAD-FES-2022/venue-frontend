@@ -1,18 +1,5 @@
 import { useVenueApi } from './useVenueApi';
-
-type QueryParams = {
-  'category'?: string;
-  'sort-by'?: 'category' | 'title' | 'date' | '-category' | '-title' | '-date';
-};
-
-type Notice = {
-  uuid: string;
-  title: string;
-  date: string; // ISO8601
-  category: string[];
-};
-
-type Response = Notice[];
+import { QueryParams, Response } from '../types/api/allNotices';
 
 export const useFetchAllNotices = (params: QueryParams = {}) => {
   const path = 'notice/';

@@ -1,15 +1,5 @@
 import { useVenueApi } from './useVenueApi';
-
-type QueryParams = Record<string, never>;
-
-type Response = {
-  uuid: string;
-  title: string;
-  date: string; // ISO8601
-  category: string[];
-  content: string;
-  relatedUrl: string[];
-};
+import { QueryParams, Response } from '../types/api/notice';
 
 export const useFetchNotice = (uuid: string) => {
   const path = `notice/${uuid}/`;
