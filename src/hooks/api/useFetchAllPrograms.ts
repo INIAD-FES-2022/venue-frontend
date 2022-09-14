@@ -1,5 +1,5 @@
 import { useVenueApi } from './useVenueApi';
-import { QueryParams, Response } from '../types/api/allPrograms';
+import { QueryParams, Response } from '../../types/api/allPrograms';
 
 export const useFetchAllPrograms = (params: QueryParams = {}) => {
   const path = 'program/';

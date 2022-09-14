@@ -1,9 +1,9 @@
 import { useVenueApi } from './useVenueApi';
-import { QueryParams, Response } from '../types/api/group';
+import { QueryParams, Response } from '../../types/api/notice';
 
-export const useFetchGroup = (uuid: string) => {
-  const path = `group/${uuid}/`;
-  const key = `group/${uuid}/`;
+export const useFetchNotice = (uuid: string) => {
+  const path = `notice/${uuid}/`;
+  const key = `notice/${uuid}/`;
 
   const {
     data,
