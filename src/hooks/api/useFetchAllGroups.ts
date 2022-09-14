@@ -1,9 +1,9 @@
 import { useVenueApi } from './useVenueApi';
-import { QueryParams, Response } from '../types/api/program';
+import { QueryParams, Response } from '../../types/api/allGroups';
 
-export const useFetchProgram = (uuid: string) => {
-  const path = `program/${uuid}/`;
-  const key = `program/${uuid}/`;
+export const useFetchAllGroups = () => {
+  const path = 'group/';
+  const key = `allGroups`;
 
   const {
     data,
