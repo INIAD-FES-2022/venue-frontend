@@ -1,9 +1,9 @@
 import { useVenueApi } from './useVenueApi';
-import { QueryParams, Response } from '../types/api/allGroups';
+import { QueryParams, Response } from '../../types/api/allNotices';
 
-export const useFetchAllGroups = () => {
-  const path = 'group/';
-  const key = `allGroups`;
+export const useFetchAllNotices = (params: QueryParams = {}) => {
+  const path = 'notice/';
+  const key = 'allNotices';
 
   const {
     data,
@@ -15,7 +15,7 @@ export const useFetchAllGroups = () => {
     isLoading: boolean;
     isError: boolean;
     error: Error | null;
-  } = useVenueApi<QueryParams, Response>(key, path, {});
+  } = useVenueApi<QueryParams, Response>(key, path, params);
 
   return { data, isLoading, isError, error };
 };

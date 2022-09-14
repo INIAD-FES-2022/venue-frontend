@@ -1,9 +1,9 @@
 import { useVenueApi } from './useVenueApi';
-import { QueryParams, Response } from '../types/api/notice';
+import { QueryParams, Response } from '../../types/api/program';
 
-export const useFetchNotice = (uuid: string) => {
-  const path = `notice/${uuid}/`;
-  const key = `notice/${uuid}/`;
+export const useFetchProgram = (uuid: string) => {
+  const path = `program/${uuid}/`;
+  const key = `program/${uuid}/`;
 
   const {
     data,
