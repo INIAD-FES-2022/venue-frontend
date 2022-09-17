@@ -1,8 +1,6 @@
-import { createTheme, createGlobalTheme } from '@vanilla-extract/css';
+import { createGlobalTheme } from '@vanilla-extract/css';
 
 export const colors = {
-  terminal_background: '#',
-
   // text colors
   text_purple_1: '#5C2D36',
   text_purple_2: '#6C2C2F',
@@ -113,7 +111,7 @@ export const fonts = {
   design_en_4: 'Turret Road',
 };
 
-export const vars = createGlobalTheme('globalTheme', {
+export const globalVars = createGlobalTheme('globalTheme', {
   colors,
   fonts,
 });
