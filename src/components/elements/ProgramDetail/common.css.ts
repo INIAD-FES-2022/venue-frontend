@@ -7,3 +7,9 @@ export const container = style({
 export const caption = style({
   fontSize: '1.5rem',
 });
+
+export const withIcon = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.2rem',
+});

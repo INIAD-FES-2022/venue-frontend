@@ -1,6 +1,9 @@
 import Image from 'next/image';
+import { GrLocation } from 'react-icons/gr';
+import { HiOutlineClock } from 'react-icons/hi';
 import { Response } from '../../../../types/api/program';
 import * as styles from './Overview.css';
+import * as common from '../common.css';
 
 export const Overview = ({ data }: { data: Response | undefined }) => {
   if (data) {
@@ -14,6 +17,11 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
     const endDay = endDate.getDate();
     const endHour = endDate.getHours();
     const endMinute = endDate.getMinutes();
+
+    const rem = parseInt(
+      getComputedStyle(document.documentElement).fontSize,
+      10,
+    );
 
     return (
       <div className={styles.overview}>
@@ -32,11 +40,15 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
             <h1 className={styles.title}>{data.title}</h1>
           </div>
           <div>
-            <p>
+            <p className={common.withIcon}>
+              <HiOutlineClock size={rem} />
               {startMonth}月{startDay}日{startHour}:{startMinute}-{endMonth}月
               {endDay}日{endHour}:{endMinute}
             </p>
-            <p>{data.place}</p>
+            <p className={common.withIcon}>
+              <GrLocation size={rem} />
+              {data.place}
+            </p>
           </div>
           <p>{data.group.name}</p>
         </div>

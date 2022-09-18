@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { BiLink } from 'react-icons/bi';
 import { useFetchGroup } from '../../../../hooks/api/useFetchGroup';
 import * as styles from './GroupDesc.css';
 import * as common from '../common.css';
@@ -24,7 +25,12 @@ export const GroupDesc = ({ uuid }: { uuid: string }) => {
           </div>
           <p>{data.description}</p>
         </div>
-        {data.homepage ? <a href={data.homepage}>{data.homepage}</a> : null}
+        {data.homepage ? (
+          <a href={data.homepage} className={common.withIcon}>
+            <BiLink size={rem} />
+            {data.homepage}
+          </a>
+        ) : null}
       </div>
     );
   }
