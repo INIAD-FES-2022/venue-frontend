@@ -1,4 +1,6 @@
 import Image from 'next/image';
+import { GrLocation } from 'react-icons/gr';
+import { HiOutlineClock } from 'react-icons/hi';
 import { OmittedProgram as Program } from '../../../../types/api/allPrograms';
 import * as styles from './ListItem.css';
 
@@ -14,6 +16,8 @@ export const ListItem = ({ program }: { program: Program }) => {
   const endHour = endDate.getHours();
   const endMinute = endDate.getMinutes();
 
+  const rem = parseInt(document.documentElement.style.fontSize, 10);
+
   return (
     <div className={styles.gridItem}>
       <div className={styles.imageWrapper}>
@@ -22,11 +26,15 @@ export const ListItem = ({ program }: { program: Program }) => {
       <div className={styles.info}>
         <h2 className={styles.title}>{program.title}</h2>
         <div>
-          <p>
+          <p className={styles.withIcon}>
+            <HiOutlineClock size={rem} />
             {startMonth}月{startDay}日{startHour}:{startMinute}-{endMonth}月
             {endDay}日{endHour}:{endMinute}
           </p>
-          <p>{program.place}</p>
+          <p className={styles.withIcon}>
+            <GrLocation size={rem} />
+            {program.place}
+          </p>
         </div>
         <p>{program.group.name}</p>
       </div>

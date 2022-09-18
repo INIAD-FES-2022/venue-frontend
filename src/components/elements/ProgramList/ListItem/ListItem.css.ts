@@ -28,3 +28,9 @@ export const info = style({
 export const title = style({
   fontSize: '1.5rem',
 });
+
+export const withIcon = style({
+  display: 'flex',
+  alignItems: 'center',
+  gap: '0.2rem',
+});
