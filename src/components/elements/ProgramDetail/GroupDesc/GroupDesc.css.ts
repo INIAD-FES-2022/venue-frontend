@@ -1,14 +1,5 @@
 import { style } from '@vanilla-extract/css';
 
-export const groupDesc = style({
-  width: '100%',
-});
-
-export const caption = style({
-  fontSize: '1.5rem',
-  marginBottom: '10px',
-});
-
 export const description = style({
   width: '100%',
   marginBottom: '10px',

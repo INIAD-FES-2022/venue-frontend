@@ -3,6 +3,7 @@ import { useFetchProgram } from '../../../hooks/api/useFetchProgram';
 import { Overview } from './Overview/Overview';
 import { IntroImage } from './IntroImage/IntroImage';
 import { ProgramDesc } from './ProgramDesc/ProgramDesc';
+import { EmbedPlayer } from './EmbedPlayer/EmbedPlayer';
 import { GroupDesc } from './GroupDesc/GroupDesc';
 import { RelatedLink } from './RelatedLink/RelatedLink';
 
@@ -18,6 +19,7 @@ export const ProgramDetail: React.FC<Props> = ({ uuid }) => {
       <Overview data={data} />
       <IntroImage data={data} />
       <ProgramDesc data={data} />
+      {data ? <EmbedPlayer url={data.streamingUrl} /> : null}
       {data ? <GroupDesc uuid={data.group.uuid} /> : null}
       {data ? <RelatedLink links={data.relatedUrl} /> : null}
     </div>

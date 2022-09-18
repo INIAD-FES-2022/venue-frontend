@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { useFetchGroup } from '../../../../hooks/api/useFetchGroup';
 import * as styles from './GroupDesc.css';
+import * as common from '../common.css';
 
 export const GroupDesc = ({ uuid }: { uuid: string }) => {
   const { data } = useFetchGroup(uuid);
@@ -8,8 +9,8 @@ export const GroupDesc = ({ uuid }: { uuid: string }) => {
 
   if (data) {
     return (
-      <div className={styles.groupDesc}>
-        <h2 className={styles.caption}>団体説明</h2>
+      <div className={common.container}>
+        <h2 className={common.caption}>団体説明</h2>
         <div className={styles.description}>
           <div className={styles.info}>
             <Image

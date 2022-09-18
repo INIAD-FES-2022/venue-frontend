@@ -1,10 +1,11 @@
 import * as styles from './EmbedPlayer.css';
+import * as common from '../common.css';
 
 export const EmbedPlayer = ({ url }: { url: string }) => {
   if (url) {
     return (
-      <div className={styles.EmbedPlayer}>
-        <h2 className={styles.caption}>企画に行く</h2>
+      <div className={common.container}>
+        <h2 className={common.caption}>企画に行く</h2>
         <div className={styles.iframeWrapper}>
           <iframe
             src={url}

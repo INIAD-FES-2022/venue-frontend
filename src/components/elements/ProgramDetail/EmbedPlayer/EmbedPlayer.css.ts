@@ -1,13 +1,5 @@
 import { style } from '@vanilla-extract/css';
 
-export const EmbedPlayer = style({
-  width: '100%',
-});
-
-export const caption = style({
-  fontSize: '1.5rem',
-});
-
 export const iframeWrapper = style({
   position: 'relative',
   width: '100%',

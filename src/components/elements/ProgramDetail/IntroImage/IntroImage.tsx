@@ -4,6 +4,7 @@ import Slider, { Settings } from 'react-slick';
 import { Response } from '../../../../types/api/program';
 import { useElementRect } from '../../../../hooks/useElementRect';
 import * as styles from './IntroImage.css';
+import * as common from '../common.css';
 
 const settingInit: Settings = {
   dots: true,
@@ -43,7 +44,7 @@ export const IntroImage = ({ data }: { data: Response | undefined }) => {
 
   /* eslint-disable */
   return (
-    <div className={styles.IntroImage}>
+    <div className={common.container}>
       <div className={styles.sliderWrapper} ref={ref}>
         <Slider {...sliderSetting}>
           {data?.images.map((image, index) => (

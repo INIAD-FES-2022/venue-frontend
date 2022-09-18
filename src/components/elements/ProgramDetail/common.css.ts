@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-export const relatedLink = style({
+export const container = style({
   width: '100%',
 });
 
