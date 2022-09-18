@@ -10,6 +10,7 @@ export type Response = {
   endAt: ISO8601;
   streamingUrl: Url;
   relatedUrl: Url[];
+  thumbnail: Url;
   logo: string;
   category: Category[];
   place: string;
