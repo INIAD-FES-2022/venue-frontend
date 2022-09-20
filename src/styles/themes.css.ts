@@ -111,7 +111,7 @@ export const fonts = {
   design_en_4: 'Turret Road',
 };
 
-export const globalVars = createGlobalTheme('globalTheme', {
+export const globalVars = createGlobalTheme(':root', {
   colors,
   fonts,
 });
