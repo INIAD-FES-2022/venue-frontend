@@ -15,6 +15,7 @@ export const [terminalThemeClass, terminalVars] = createTheme({
     terminalTop_black: '#24292f',
     terminalTop_black_darker: '#191B1E',
     terminalTop_red: '#e81123',
+    terminalTop_red_darker: '#AC1C25',
   },
   fonts: { ...fonts },
 });
