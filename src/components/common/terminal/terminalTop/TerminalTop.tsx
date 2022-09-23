@@ -53,10 +53,8 @@ export const TerminalTop: FC<Props> = ({
         viewBox="0 0 24 16"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <g id="layer1">
-          <rect fill="#ffffff" width="24" height="16" x="0" y="0" />
-          <rect fill="#000000" width="22" height="14" x="1" y="1" />
-        </g>
+        <rect fill="#ffffff" width="24" height="16" x="0" y="0" />
+        <rect fill="#000000" width="22" height="14" x="1" y="1" />
       </svg>
     </button>
     <button

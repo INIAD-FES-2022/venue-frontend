@@ -14,7 +14,7 @@ export const styles = {
       backgroundColor: terminalVars.colors.terminalTop_red,
     },
     ':active': {
-      backgroundColor: terminalVars.colors.terminalTop_red,
+      backgroundColor: terminalVars.colors.terminalTop_red_darker,
     },
   }),
   maximizeButton: style({
