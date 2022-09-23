@@ -1,6 +1,7 @@
 import { FC, ReactNode, useState, useCallback } from 'react';
 import { styles } from './terminal.css';
 import { TerminalTop } from './terminalTop/TerminalTop';
+import { terminalThemeClass } from './terminalTheme.css';
 
 type Props = {
   children: ReactNode;
@@ -45,7 +46,7 @@ export const Terminal: FC<Props> = ({
     // NOTE 空のfragment(<></>)を使うな(isDeletedがtrueの時に空のfragment(<></>)になる)って怒られるけれど、
     // JSX.Elementを返したいので無視している、もっと良いやり方はあるのだろうか
     // eslint-disable-next-line react/jsx-no-useless-fragment
-    <>
+    <div className={`${terminalThemeClass}`}>
       {!isDeleted && (
         <div className={`${styles.container} flex flex-col`}>
           <TerminalTop
@@ -67,6 +68,6 @@ export const Terminal: FC<Props> = ({
           )}
         </div>
       )}
-    </>
+    </div>
   );
 };
