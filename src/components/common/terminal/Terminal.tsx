@@ -5,14 +5,14 @@ import { terminalThemeClass } from './terminalTheme.css';
 
 type Props = {
   children: ReactNode;
-  size?: 'Small' | 'Medium' | 'Large';
+  size?: number;
   isDeletable?: boolean;
   isMinimizable?: boolean;
 };
 
 export const Terminal: FC<Props> = ({
   children,
-  size = 'Medium',
+  size = 24,
   isDeletable = false,
   isMinimizable = false,
 }) => {
@@ -46,9 +46,11 @@ export const Terminal: FC<Props> = ({
     // NOTE 空のfragment(<></>)を使うな(isDeletedがtrueの時に空のfragment(<></>)になる)って怒られるけれど、
     // JSX.Elementを返したいので無視している、もっと良いやり方はあるのだろうか
     // eslint-disable-next-line react/jsx-no-useless-fragment
-    <div className={`${terminalThemeClass}`}>
+    <>
       {!isDeleted && (
-        <div className={`${styles.container} flex flex-col`}>
+        <div
+          className={`${terminalThemeClass} ${styles.container} flex flex-col`}
+        >
           <TerminalTop
             isMinimized={isMinimize}
             onDeleteButtonClicked={() => {
@@ -60,7 +62,7 @@ export const Terminal: FC<Props> = ({
             onMinimizeButtonClicked={() => {
               permittedSetIsMinimize(true);
             }}
-            size={24}
+            size={size}
             className=""
           />
           {!isMinimize && (
@@ -68,6 +70,6 @@ export const Terminal: FC<Props> = ({
           )}
         </div>
       )}
-    </div>
+    </>
   );
 };
