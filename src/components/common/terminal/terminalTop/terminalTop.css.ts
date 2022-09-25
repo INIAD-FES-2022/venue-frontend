@@ -1,21 +1,32 @@
 import { style, createVar, StyleRule } from '@vanilla-extract/css';
 import { terminalVars } from '../terminalTheme.css';
 
-export const size = createVar();
+export const height = createVar();
+export const buttonWidth = createVar();
 
 const buttonStyle: StyleRule = {
   'backgroundColor': terminalVars.colors.terminalTop_black,
+  'width': buttonWidth,
   ':hover': {
     backgroundColor: terminalVars.colors.terminalTop_black_lighter,
   },
   ':active': {
     backgroundColor: terminalVars.colors.terminalTop_black_darker,
   },
+  'selectors': {
+    '&>svg &:hover': {
+      backgroundColor: terminalVars.colors.terminalTop_black_lighter,
+    },
+    '&>svg &:active': {
+      backgroundColor: terminalVars.colors.terminalTop_black_darker,
+    },
+  },
 };
 
 export const styles = {
   container: style({
     backgroundColor: terminalVars.colors.terminalTop_background_lightBrown,
+    height,
   }),
   deleteButton: style({
     ...buttonStyle,
@@ -25,6 +36,14 @@ export const styles = {
     },
     ':active': {
       backgroundColor: terminalVars.colors.terminalTop_red_darker,
+    },
+    'selectors': {
+      '&>svg &:hover': {
+        backgroundColor: terminalVars.colors.terminalTop_red,
+      },
+      '&>svg &:active': {
+        backgroundColor: terminalVars.colors.terminalTop_red_darker,
+      },
     },
   }),
   maximizeButton: style({
