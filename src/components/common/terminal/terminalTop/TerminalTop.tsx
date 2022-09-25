@@ -81,13 +81,16 @@ export const TerminalTop: FC<Props> = ({
         onClick={onMaximizeButtonClicked}
       >
         <path
-          d={`M0 0v${barHeight * (2 / 3)}h${barHeight}V0zm1 1h${
-            barHeight - 2
-          }v${barHeight * (2 / 3) - 2}H1z`}
+          d={`M0 0v${barHeight * (2 / 3)}h${barHeight}V0zm${2} ${2}h${
+            barHeight - 2 * 2
+          }v${barHeight * (2 / 3) - 2 * 2}H${2}z`}
           fill="#EFEFEF"
         />
         {/* <svg width="24" height="16" xmlns="http://www.w3.org/2000/svg">
           <path d="M0 0v16h24V0zm1 1h22v14H1z" fill="#EFEFEF" />
+        </svg> */}
+        {/* <svg width="24" height="16" xmlns="http://www.w3.org/2000/svg">
+          <path d="M0 0v16h24V0zm2 2h20v12H2z" fill="#EFEFEF" />
         </svg> */}
       </svg>
     </button>
