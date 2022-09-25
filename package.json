@@ -48,11 +48,11 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "prettier --write --loglevel=error",
+      "prettier --write --cache --loglevel=error",
       "eslint --cache --fix --quiet"
     ],
     "*.{html,css,scss,gql,graphql,json}": [
-      "prettier --write --loglevel=error"
+      "prettier --write --cache --loglevel=error"
     ]
   }
 }
