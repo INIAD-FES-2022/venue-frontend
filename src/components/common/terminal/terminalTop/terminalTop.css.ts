@@ -3,6 +3,7 @@ import { terminalVars } from '../terminalTheme.css';
 
 export const height = createVar();
 export const buttonWidth = createVar();
+export const lineHeight = createVar();
 
 const buttonStyle: StyleRule = {
   'backgroundColor': terminalVars.colors.terminalTop_black,
@@ -27,6 +28,12 @@ export const styles = {
   container: style({
     backgroundColor: terminalVars.colors.terminalTop_background_lightBrown,
     height,
+  }),
+  buttons: style({}),
+  barTitle: style({
+    fontSize: height,
+    lineHeight,
+    whiteSpace: 'nowrap',
   }),
   deleteButton: style({
     ...buttonStyle,

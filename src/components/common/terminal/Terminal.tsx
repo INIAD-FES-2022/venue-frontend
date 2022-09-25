@@ -5,6 +5,7 @@ import { TerminalTop } from './terminalTop/TerminalTop';
 
 type Props = {
   children: ReactNode;
+  barTitle?: string;
   barHeight?: number;
   isDeletable?: boolean;
   isMinimizable?: boolean;
@@ -13,6 +14,7 @@ type Props = {
 
 export const Terminal: FC<Props> = ({
   children,
+  barTitle = '',
   barHeight = 24,
   isDeletable = false,
   isMinimizable = false,
@@ -63,6 +65,7 @@ export const Terminal: FC<Props> = ({
             onMinimizeButtonClicked={() => {
               permittedSetIsMinimize(true);
             }}
+            barTitle={barTitle}
             barHeight={barHeight}
             className=""
           />
