@@ -1,13 +1,14 @@
 import { FC, ReactNode, useState, useCallback } from 'react';
 import { styles } from './terminal.css';
 import { TerminalTop } from './terminalTop/TerminalTop';
-import { terminalThemeClass } from './terminalTheme.css';
+// import { terminalThemeClass } from './terminalTheme.css';
 
 type Props = {
   children: ReactNode;
   size?: number;
   isDeletable?: boolean;
   isMinimizable?: boolean;
+  className?: string;
 };
 
 export const Terminal: FC<Props> = ({
@@ -15,6 +16,7 @@ export const Terminal: FC<Props> = ({
   size = 24,
   isDeletable = false,
   isMinimizable = false,
+  className = '',
 }) => {
   // ターミナル風の何かに表示されている様な見た目にする
   // TODO sizeの指定で大きさを調整出来るようにしたい
@@ -48,9 +50,8 @@ export const Terminal: FC<Props> = ({
     // eslint-disable-next-line react/jsx-no-useless-fragment
     <>
       {!isDeleted && (
-        <div
-          className={`${terminalThemeClass} ${styles.container} flex flex-col`}
-        >
+        <div className={`${className}  ${styles.container} flex flex-col`}>
+          {/* ${terminalThemeClass} */}
           <TerminalTop
             isMinimized={isMinimize}
             onDeleteButtonClicked={() => {
