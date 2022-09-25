@@ -1,8 +1,6 @@
-import { createTheme } from '@vanilla-extract/css';
+import { createGlobalTheme } from '@vanilla-extract/css';
 
 export const colors = {
-  terminal_background: '#',
-
   // text colors
   text_purple_1: '#5C2D36',
   text_purple_2: '#6C2C2F',
@@ -99,9 +97,21 @@ export const colors = {
   accent_purple_1: '#F73B70',
 };
 
-export const [themeClass, vars] = createTheme({
+export const fonts = {
+  japanese_1: 'Yuji Syuku',
+  japanese_2: 'Hannari',
+  japanese_3: 'Kokoro',
+  normal_1: 'Noto Serif JP',
+  normal_2: 'Sawarabi Mincho',
+  dot_1: 'DotGothic16',
+  dot_2: 'Silkscreen',
+  design_en_1: 'Cairo Play',
+  design_en_2: 'Coda',
+  design_en_3: 'Oxanium',
+  design_en_4: 'Turret Road',
+};
+
+export const globalVars = createGlobalTheme(':root', {
   colors,
-  // font: {
-  //   body: 'arial',
-  // },
+  fonts,
 });
