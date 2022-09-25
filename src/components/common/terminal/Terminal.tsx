@@ -5,7 +5,7 @@ import { TerminalTop } from './terminalTop/TerminalTop';
 
 type Props = {
   children: ReactNode;
-  size?: number;
+  barHeight?: number;
   isDeletable?: boolean;
   isMinimizable?: boolean;
   className?: string;
@@ -13,13 +13,13 @@ type Props = {
 
 export const Terminal: FC<Props> = ({
   children,
-  size = 24,
+  barHeight = 24,
   isDeletable = false,
   isMinimizable = false,
   className = '',
 }) => {
   // ターミナル風の何かに表示されている様な見た目にする
-  // TODO sizeの指定で大きさを調整出来るようにしたい
+  // TODO barHeightの指定で大きさを調整出来るようにしたい
   // isDeletableがtrueなら×をクリックすることでこのコンポーネントは削除される
   // isMinimizeがtrueなら_をクリックすると最小化?っぽい見た目になって、その状態で□をクリックすると元に戻る
 
@@ -63,7 +63,7 @@ export const Terminal: FC<Props> = ({
             onMinimizeButtonClicked={() => {
               permittedSetIsMinimize(true);
             }}
-            size={size}
+            barHeight={barHeight}
             className=""
           />
           {!isMinimize && (
