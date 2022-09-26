@@ -1,4 +1,4 @@
-import { createGlobalTheme } from '@vanilla-extract/css';
+import { createGlobalTheme, globalStyle } from '@vanilla-extract/css';
 
 export const colors = {
   // text colors
@@ -114,4 +114,10 @@ export const fonts = {
 export const globalVars = createGlobalTheme(':root', {
   colors,
   fonts,
+});
+
+globalStyle('body', {
+  color: globalVars.colors.sub_blue_3,
+  backgroundColor: '#141414',
+  fontFamily: globalVars.fonts.normal_1,
 });
