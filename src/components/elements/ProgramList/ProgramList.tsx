@@ -24,7 +24,7 @@ export const ProgramList = () => {
   return (
     <div className={styles.container}>
       <h1 className={styles.headline}>企画一覧</h1>
-      <div>
+      <div className={styles.querySelector}>
         <div>
           <p>カテゴリー</p>
           <select

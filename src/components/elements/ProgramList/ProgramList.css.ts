@@ -31,3 +31,15 @@ export const gridContainer = style({
   gridGap: '50px',
   justifyContent: 'center',
 });
+
+export const querySelector = style({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  gap: '30px',
+});
+
+globalStyle(`${querySelector} > *`, {
+  display: 'flex',
+  gap: '10px',
+});
