@@ -6,7 +6,7 @@ export const ProgramDesc = ({ data }: { data: Response | undefined }) => {
     return (
       <div className={common.container}>
         <h2 className={common.caption}>企画説明</h2>
-        <p>{data.description}</p>
+        <p className={common.frame}>{data.description}</p>
       </div>
     );
   }

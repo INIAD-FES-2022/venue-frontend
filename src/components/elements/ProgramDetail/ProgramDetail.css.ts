@@ -6,10 +6,11 @@ export const container = style({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  gap: '50px',
+  padding: '50px',
+  backgroundColor: '#FFF5EA',
 });
 
 globalStyle(`${container} > *`, {
   maxWidth: '1000px',
-  padding: '0 20px 0 20px',
-  marginTop: '50px',
 });

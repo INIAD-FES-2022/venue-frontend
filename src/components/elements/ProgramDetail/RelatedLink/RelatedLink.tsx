@@ -7,7 +7,7 @@ export const RelatedLink = ({ links }: { links: string[] }) => {
     return (
       <div className={common.container}>
         <h2 className={common.caption}>関連リンク</h2>
-        <ul>
+        <ul className={common.frame}>
           {links.map((link, index) => (
             <li key={index}>
               <a href={link} className={common.withIcon}>

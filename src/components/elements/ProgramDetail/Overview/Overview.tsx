@@ -9,14 +9,11 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
   if (data) {
     const startDate = new Date(data.startAt);
     const endDate = new Date(data.endAt);
-    const startMonth = startDate.getMonth() + 1;
     const startDay = startDate.getDate();
-    const startHour = startDate.getHours();
-    const startMinute = startDate.getMinutes();
-    const endMonth = endDate.getMonth() + 1;
-    const endDay = endDate.getDate();
-    const endHour = endDate.getHours();
-    const endMinute = endDate.getMinutes();
+    const startHour = startDate.getHours().toString().padStart(2, '0');
+    const startMinute = startDate.getMinutes().toString().padStart(2, '0');
+    const endHour = endDate.getHours().toString().padStart(2, '0');
+    const endMinute = endDate.getMinutes().toString().padStart(2, '0');
 
     const rem = parseInt(
       getComputedStyle(document.documentElement).fontSize,
@@ -30,7 +27,7 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
             <Image src={data.thumbnail} alt={data.title} layout="fill" />
           </div>
         </div>
-        <div className={styles.info}>
+        <div className={`${styles.info} ${common.frame}`}>
           <div>
             <p className={styles.category}>
               {data.category.map((el) => (
@@ -42,8 +39,7 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
           <div>
             <p className={common.withIcon}>
               <HiOutlineClock size={rem} />
-              {startMonth}月{startDay}日{startHour}:{startMinute}-{endMonth}月
-              {endDay}日{endHour}:{endMinute}
+              {startDay}日 {startHour}:{startMinute}-{endHour}:{endMinute}
             </p>
             <p className={common.withIcon}>
               <GrLocation size={rem} />

@@ -35,6 +35,9 @@ export const info = style({
 
 export const category = style({
   fontSize: '1rem',
+  display: 'flex',
+  flexDirection: 'row',
+  gap: '10px',
 });
 
 export const title = style({

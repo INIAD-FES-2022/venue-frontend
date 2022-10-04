@@ -12,25 +12,25 @@ export const GroupDesc = ({ uuid }: { uuid: string }) => {
     return (
       <div className={common.container}>
         <h2 className={common.caption}>団体説明</h2>
-        <div className={styles.description}>
+        <div className={`${styles.description} ${common.frame}`}>
+          <Image
+            src={data.logo}
+            alt={data.name}
+            height={rem * 10}
+            width={rem * 10}
+            className={styles.logo}
+          />
           <div className={styles.info}>
-            <Image
-              src={data.logo}
-              alt={data.name}
-              height={rem * 2}
-              width={rem * 2}
-              className={styles.logo}
-            />
             <p className={styles.name}>{data.name}</p>
+            <p>{data.description}</p>
+            {data.homepage ? (
+              <a href={data.homepage} className={common.withIcon}>
+                <BiLink size={rem} />
+                {data.homepage}
+              </a>
+            ) : null}
           </div>
-          <p>{data.description}</p>
         </div>
-        {data.homepage ? (
-          <a href={data.homepage} className={common.withIcon}>
-            <BiLink size={rem} />
-            {data.homepage}
-          </a>
-        ) : null}
       </div>
     );
   }

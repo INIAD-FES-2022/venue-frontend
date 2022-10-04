@@ -19,9 +19,9 @@ export const ProgramDetail: React.FC<Props> = ({ uuid }) => {
       <Overview data={data} />
       <IntroImage data={data} />
       <ProgramDesc data={data} />
-      {data ? <EmbedPlayer url={data.streamingUrl} /> : null}
+      {data?.streamingUrl ? <EmbedPlayer url={data.streamingUrl} /> : null}
       {data ? <GroupDesc uuid={data.group.uuid} /> : null}
-      {data ? <RelatedLink links={data.relatedUrl} /> : null}
+      {data?.relatedUrl ? <RelatedLink links={data.relatedUrl} /> : null}
     </div>
   );
 };
