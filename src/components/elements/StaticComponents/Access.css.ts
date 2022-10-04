@@ -1,11 +1,15 @@
 import { style } from '@vanilla-extract/css';
 
-export const wrapper = style({
-  margin: 'auto',
-  maxWidth: '800px',
-  fontSize: '1rem',
-});
-export const sectionTitle = style({
-  fontSize: '1.2rem',
-  textAlign: 'left',
-});
+export const accessStyle = {
+  wrapper: style({
+    margin: 'auto',
+    width: '800px',
+    fontSize: '1rem',
+    textAlign: 'left',
+    padding: '40px',
+  }),
+
+  sectionTitle: style({
+    fontSize: '1.5rem',
+  }),
+};

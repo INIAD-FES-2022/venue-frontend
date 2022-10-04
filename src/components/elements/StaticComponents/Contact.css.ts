@@ -13,7 +13,7 @@ export const contactStyle = {
     fontSize: '1.5rem',
   }),
 
-  elements: style({
-    textIndent: '20px',
+  listElements: style({
+    textIndent: '40px',
   }),
 };
