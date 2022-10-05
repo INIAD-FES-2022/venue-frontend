@@ -28,8 +28,7 @@ export const ListItem = ({ program }: { program: Program }) => {
         <div>
           <p className={styles.withIcon}>
             <HiOutlineClock size={rem} />
-            {startMonth}月{startDay}日{startHour}:{startMinute}-{endMonth}月
-            {endDay}日{endHour}:{endMinute}
+            {startDay}日 {startHour}:{startMinute}-{endHour}:{endMinute}
           </p>
           <p className={styles.withIcon}>
             <GrLocation size={rem} />

@@ -3,7 +3,6 @@ import { style } from '@vanilla-extract/css';
 export const gridItem = style({
   width: '100%',
   height: '21.875rem',
-  backgroundColor: '#000',
   display: 'flex',
   flexDirection: 'column',
 });
@@ -17,12 +16,11 @@ export const imageWrapper = style({
 export const info = style({
   width: '100%',
   flexGrow: 1,
-  backgroundColor: '#FFF',
-  border: '1px solid #000',
+  backgroundColor: 'rgba(0, 0, 0, 0.1)',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  padding: '0.5rem',
+  padding: '1rem',
 });
 
 export const title = style({

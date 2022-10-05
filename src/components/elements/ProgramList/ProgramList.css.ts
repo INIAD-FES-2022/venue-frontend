@@ -2,15 +2,18 @@ import { style, globalStyle } from '@vanilla-extract/css';
 
 export const container = style({
   width: '100%',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
+  backgroundColor: '#FFF5EA',
+  padding: '50px 0',
+  gap: '50px',
 });
 
 globalStyle(`${container} > *`, {
   maxWidth: '1200px',
   padding: '0 20px 0 20px',
-  marginTop: '50px',
 });
 
 export const headline = style({
@@ -35,11 +38,20 @@ export const gridContainer = style({
 export const querySelector = style({
   width: '100%',
   display: 'flex',
+  alignItems: 'center',
   justifyContent: 'center',
   gap: '30px',
 });
 
 globalStyle(`${querySelector} > *`, {
   display: 'flex',
+  alignItems: 'center',
   gap: '10px',
+});
+
+export const selector = style({
+  width: '6rem',
+  height: '2rem',
+  backgroundColor: '#FFF',
+  border: '1px solid #999',
 });

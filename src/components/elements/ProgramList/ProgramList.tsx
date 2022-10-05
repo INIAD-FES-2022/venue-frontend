@@ -17,6 +17,7 @@ export const ProgramList = () => {
         <div>
           <p>カテゴリー</p>
           <select
+            className={styles.selector}
             name="category"
             id="category"
             onChange={(e) => {
@@ -42,6 +43,7 @@ export const ProgramList = () => {
         <div>
           <p>ソート</p>
           <select
+            className={styles.selector}
             name="sort"
             id="sort"
             onChange={(e) => {
