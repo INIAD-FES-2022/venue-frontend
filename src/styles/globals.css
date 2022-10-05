@@ -5,3 +5,9 @@
 * {
   font-family: 'Noto Serif JP';
 }
+
+html,
+body,
+#__next {
+  height: 100%;
+}

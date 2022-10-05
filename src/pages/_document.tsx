@@ -16,6 +16,7 @@ const Document: NextPage = () => (
         href="https://fonts.googleapis.com/css2?family=Yuji+Syuku&family=DotGothic16&family=Noto+Serif+JP&family=Sawarabi+Mincho&family=Silkscreen&family=Cairo+Play:wght@300&family=Coda&family=Oxanium:wght@300&family=Turret+Road:wght@300&display=swap"
         rel="stylesheet"
       />
+      <link href="./favicon.svg" rel="icon" type="image/svg+xml" />
     </Head>
     <body>
       <Main />
