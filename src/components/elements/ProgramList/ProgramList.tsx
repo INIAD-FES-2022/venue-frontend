@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useFetchAllPrograms } from '../../../hooks/api/useFetchAllPrograms';
 import { useAllCategories } from '../../../hooks/api/useAllCategories';
 import { QueryParams } from '../../../types/api/allPrograms';
@@ -7,19 +7,8 @@ import * as styles from './ProgramList.css';
 
 export const ProgramList = () => {
   const [query, setQuery] = useState<QueryParams>({});
-  const { categories } = useAllCategories();
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [selectedSort, setSelectedSort] =
-    useState<QueryParams['sort-by']>('startAt');
   const { data } = useFetchAllPrograms(query);
-
-  useEffect(() => {
-    if (selectedCategory) {
-      setQuery({ 'category': selectedCategory, 'sort-by': selectedSort });
-    } else {
-      setQuery({ 'sort-by': selectedSort });
-    }
-  }, [selectedCategory, selectedSort]);
+  const { categories } = useAllCategories();
 
   return (
     <div className={styles.container}>
@@ -31,9 +20,15 @@ export const ProgramList = () => {
             name="category"
             id="category"
             onChange={(e) => {
-              setSelectedCategory(
-                e.target.value === 'all' ? null : e.target.value,
-              );
+              setQuery((q) => {
+                if (e.target.value === 'all') {
+                  const { category: _, ...newQuery } = q; // eslint-disable-line
+
+                  return newQuery;
+                }
+
+                return { ...q, category: e.target.value };
+              });
             }}
           >
             <option value="all">すべて</option>
@@ -50,7 +45,10 @@ export const ProgramList = () => {
             name="sort"
             id="sort"
             onChange={(e) => {
-              setSelectedSort(e.target.value as QueryParams['sort-by']);
+              setQuery((q) => ({
+                ...q,
+                'sort-by': e.target.value as QueryParams['sort-by'],
+              }));
             }}
           >
             <option value="startAt">開始時間</option>
