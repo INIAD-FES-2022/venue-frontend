@@ -2,21 +2,30 @@ import { style, globalStyle } from '@vanilla-extract/css';
 
 export const container = style({
   width: '100%',
+  height: '100%',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
+  backgroundColor: '#FFF5EA',
+  gap: '20px',
+  padding: '20px',
 });
 
 globalStyle(`${container} > *`, {
   maxWidth: '1000px',
   padding: '0 20px 0 20px',
-  marginTop: '50px',
 });
 
 export const headline = style({
   fontSize: '2rem',
   width: '100%',
+});
+
+export const category = style({
+  fontSize: '1rem',
+  display: 'flex',
+  gap: '10px',
 });
 
 export const noticeList = style({

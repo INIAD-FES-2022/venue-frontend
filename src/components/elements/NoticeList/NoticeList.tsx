@@ -80,7 +80,7 @@ export const NoticeList = () => {
       <div className={styles.noticeList}>
         {data?.map((notice) => (
           <div key={notice.uuid} className={styles.noticeItem}>
-            <p>
+            <p className={styles.category}>
               {notice.category.map((el) => (
                 <span key={el.uuid}>{el.name}</span>
               ))}
