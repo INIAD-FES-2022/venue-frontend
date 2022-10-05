@@ -13,13 +13,14 @@ export const GroupDesc = ({ uuid }: { uuid: string }) => {
       <div className={common.container}>
         <h2 className={common.caption}>団体説明</h2>
         <div className={`${styles.description} ${common.frame}`}>
-          <Image
-            src={data.logo}
-            alt={data.name}
-            height={rem * 10}
-            width={rem * 10}
-            className={styles.logo}
-          />
+          <div className={styles.logoWrapper}>
+            <Image
+              src={data.logo}
+              alt={data.name}
+              layout="fill"
+              className={styles.logo}
+            />
+          </div>
           <div className={styles.info}>
             <p className={styles.name}>{data.name}</p>
             <p>{data.description}</p>
