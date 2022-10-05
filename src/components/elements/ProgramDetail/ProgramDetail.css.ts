@@ -9,6 +9,7 @@ export const container = style({
   gap: '50px',
   padding: '50px',
   backgroundColor: '#FFF5EA',
+  overflowWrap: 'anywhere',
 });
 
 globalStyle(`${container} > *`, {
