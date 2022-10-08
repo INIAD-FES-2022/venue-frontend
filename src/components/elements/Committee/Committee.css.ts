@@ -7,3 +7,5 @@ export const committee = style({
 export const greeting = style({});
 
 export const caption = style({});
+
+export const roster = style({});
