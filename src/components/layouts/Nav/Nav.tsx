@@ -4,8 +4,12 @@ import Link from 'next/link';
 import { Terminal } from '../../common/terminal/Terminal';
 import * as styles from './Nav.css';
 
-export const Nav: React.FC = () => (
-  <Terminal barTitle="誘導">
+type Props = {
+  className?: string;
+};
+
+export const Nav: React.FC<Props> = ({ className }) => (
+  <Terminal barTitle="誘導" className={className}>
     <ul className={styles.nav}>
       <li>
         <Link href="./">入口</Link>
