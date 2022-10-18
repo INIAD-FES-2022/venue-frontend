@@ -11,11 +11,16 @@
   "dependencies": {
     "@tanstack/react-query": "^4.2.3",
     "@vanilla-extract/css": "^1.9.0",
+    "@vanilla-extract/dynamic": "^2.0.2",
     "@vanilla-extract/next-plugin": "^2.0.2",
+    "@vanilla-extract/recipes": "^0.2.5",
     "next": "12.2.5",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "recoil": "^0.7.5"
+    "react-icons": "^4.4.0",
+    "react-slick": "^0.29.0",
+    "recoil": "^0.7.5",
+    "slick-carousel": "^1.8.1"
   },
   "devDependencies": {
     "@types/node": "18.7.15",
@@ -44,11 +49,11 @@
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [
-      "prettier --write --loglevel=error",
+      "prettier --write --cache --loglevel=error",
       "eslint --cache --fix --quiet"
     ],
     "*.{html,css,scss,gql,graphql,json}": [
-      "prettier --write --loglevel=error"
+      "prettier --write --cache --loglevel=error"
     ]
   }
 }
