@@ -6,4 +6,6 @@ export const caption = style({
   fontSize: '2rem',
 });
 
-export const notice = style({});
+export const content = style({});
+
+export const title = style({});
