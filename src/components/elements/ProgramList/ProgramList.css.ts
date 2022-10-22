@@ -1,4 +1,5 @@
 import { style, globalStyle } from '@vanilla-extract/css';
+import { fonts } from '../../../styles/themes.css';
 
 export const container = style({
   width: '100%',
@@ -6,19 +7,14 @@ export const container = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
-  backgroundColor: '#FFF5EA',
   padding: '50px 0',
   gap: '50px',
+  fontFamily: `${fonts.japanese_1}, ${fonts.japanese_2}, ${fonts.japanese_3}, sans-serif`,
 });
 
 globalStyle(`${container} > *`, {
   maxWidth: '1200px',
   padding: '0 20px 0 20px',
-});
-
-export const headline = style({
-  fontSize: '2.5rem',
-  width: '100%',
 });
 
 export const gridWrapper = style({
@@ -35,23 +31,26 @@ export const gridContainer = style({
   justifyContent: 'center',
 });
 
-export const querySelector = style({
-  width: '100%',
+export const querySelectors = style({
   display: 'flex',
-  alignItems: 'center',
   justifyContent: 'center',
-  gap: '30px',
+  gap: '100px',
+  rowGap: '50px',
+  flexWrap: 'wrap',
 });
 
-globalStyle(`${querySelector} > *`, {
+export const querySelector = style({
   display: 'flex',
-  alignItems: 'center',
-  gap: '10px',
+  justifyContent: 'center',
+  gap: '20px',
+  flexWrap: 'wrap',
 });
 
 export const selector = style({
-  width: '6rem',
+  width: '8rem',
   height: '2rem',
+  fontSize: '1.2rem',
+  textAlign: 'center',
   backgroundColor: '#FFF',
-  border: '1px solid #999',
+  borderBottom: '1px solid #999',
 });
