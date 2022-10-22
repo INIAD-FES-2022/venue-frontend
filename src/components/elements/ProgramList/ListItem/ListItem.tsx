@@ -3,6 +3,14 @@ import { Terminal } from '../../../common/terminal/Terminal';
 import { OmittedProgram as Program } from '../../../../types/api/allPrograms';
 import * as styles from './ListItem.css';
 
+const Partition = () => (
+  <div className={styles.partition}>
+    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
+    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
+    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
+  </div>
+);
+
 export const ListItem = ({ program }: { program: Program }) => {
   const startDate = new Date(program.startAt);
   const endDate = new Date(program.endAt);
@@ -23,20 +31,12 @@ export const ListItem = ({ program }: { program: Program }) => {
             <p className={styles.caption}>企画名</p>
             <p className={styles.title}>{program.title}</p>
           </div>
-          <div className={styles.partition}>
-            <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-            <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-            <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-          </div>
+          <Partition />
           <div className={styles.description}>
             <p className={styles.caption}>場所</p>
             <p className={styles.descriptionText}>{program.place}</p>
           </div>
-          <div className={styles.partition}>
-            <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-            <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-            <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-          </div>
+          <Partition />
           <div className={styles.description}>
             <p className={styles.caption}>日時</p>
             <p className={styles.descriptionText}>
