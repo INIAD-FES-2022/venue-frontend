@@ -9,7 +9,7 @@ type Props = {
 };
 
 export const Nav: React.FC<Props> = ({ className }) => (
-  <Terminal barTitle="誘導" className={className}>
+  <Terminal barTitle="誘導" className={className} isMinimizable>
     <ul className={styles.nav}>
       <li>
         <Link href="./">入口</Link>
