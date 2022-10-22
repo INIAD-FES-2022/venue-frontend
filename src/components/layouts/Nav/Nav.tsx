@@ -19,6 +19,18 @@ const navItems = {
   './contact': '問い合わせ',
 };
 
+const ReturnTop: React.FC = () => {
+  const returnTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <button onClick={returnTop} type="button">
+      画面上端へ
+    </button>
+  );
+};
+
 export const Nav: React.FC<Props> = ({ className }) => (
   <Terminal barTitle="誘導" className={className} isMinimizable>
     <ul className={styles.nav}>
@@ -27,6 +39,9 @@ export const Nav: React.FC<Props> = ({ className }) => (
           <Link href={href}>{text}</Link>
         </li>
       ))}
+      <li className={styles.returnTop}>
+        <ReturnTop />
+      </li>
     </ul>
   </Terminal>
 );
