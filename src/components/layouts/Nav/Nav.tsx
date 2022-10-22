@@ -8,30 +8,25 @@ type Props = {
   className?: string;
 };
 
+const navItems = {
+  './': '入口',
+  './about-iniad-fes': 'いにあど-ふぇす',
+  './about-committee': '実行委員会',
+  './program': '企画一覧',
+  './attention': '諸注意',
+  './access': '来場方法',
+  './schedule': '日程表',
+  './contact': '問い合わせ',
+};
+
 export const Nav: React.FC<Props> = ({ className }) => (
   <Terminal barTitle="誘導" className={className} isMinimizable>
     <ul className={styles.nav}>
-      <li>
-        <Link href="./">入口</Link>
-      </li>
-      <li>
-        <Link href="./">紹介</Link>
-      </li>
-      <li>
-        <Link href="./program">企画一覧</Link>
-      </li>
-      <li>
-        <Link href="./attention">諸注意</Link>
-      </li>
-      <li>
-        <Link href="./access">来場方法</Link>
-      </li>
-      <li>
-        <Link href="./schedule">日程表</Link>
-      </li>
-      <li>
-        <Link href="./contact">問い合わせ</Link>
-      </li>
+      {Object.entries(navItems).map(([href, text]) => (
+        <li key={href}>
+          <Link href={href}>{text}</Link>
+        </li>
+      ))}
     </ul>
   </Terminal>
 );
