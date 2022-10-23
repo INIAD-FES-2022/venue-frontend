@@ -1,3 +1,4 @@
+import assert from 'assert';
 import { useQuery } from '@tanstack/react-query';
 
 export const useVenueApi = <
@@ -7,33 +8,34 @@ export const useVenueApi = <
   key: string,
   path: string,
   params: QueryParams,
+  selector: (data: Response) => Response = (data) => data,
 ) => {
-  if (!process.env.NEXT_PUBLIC_API_ROOT) {
-    throw new Error('NEXT_PUBLIC_API_ROOT is not defined');
-  } else {
-    const API_ROOT = process.env.NEXT_PUBLIC_API_ROOT;
-    const {
-      data,
-      isLoading,
-      isError,
-      error,
-    }: {
-      data: Response | undefined;
-      isLoading: boolean;
-      isError: boolean;
-      error: Error | null;
-    } = useQuery([key, params], async () => {
-      const query = new URLSearchParams(params).toString();
-      const url = `${API_ROOT}${path}${query ? `?${query}` : ''}`;
+  const API_ROOT = process.env.NEXT_PUBLIC_API_ROOT;
+  assert(API_ROOT, 'API_ROOT is not defined');
 
-      const response = await fetch(url, { method: 'GET' });
-      if (response.status !== 200) {
-        throw new Error(`${response.status}`);
-      }
+  const fetcher = async () => {
+    const query = new URLSearchParams(params).toString();
+    const url = `${API_ROOT}${path}${query ? `?${query}` : ''}`;
 
-      return response.json();
-    });
+    const response = await fetch(url, { method: 'GET' });
+    assert(response.status === 200, response.status.toString());
 
-    return { data, isLoading, isError, error };
-  }
+    return response.json();
+  };
+
+  const {
+    data,
+    isLoading,
+    isError,
+    error,
+  }: {
+    data: Response | undefined;
+    isLoading: boolean;
+    isError: boolean;
+    error: Error | null;
+  } = useQuery([key, params], fetcher, {
+    select: selector,
+  });
+
+  return { data, isLoading, isError, error };
 };

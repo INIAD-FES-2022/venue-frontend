@@ -28,6 +28,8 @@ export type OmittedProgram = {
   group: OmittedGroup;
   thumbnail: Url;
   category: Category[];
+  isOnline: boolean;
+  isFace2Face: boolean;
 };
 
 export type Response = OmittedProgram[];

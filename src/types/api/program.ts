@@ -15,4 +15,6 @@ export type Response = {
   category: Category[];
   place: string;
   images: Url[];
+  isOnline: boolean;
+  isFace2Face: boolean;
 };
