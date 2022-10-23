@@ -2,7 +2,7 @@ import { style } from '@vanilla-extract/css';
 
 export const gridItem = style({
   width: '100%',
-  height: '21.875rem',
+  height: '24rem',
   display: 'flex',
   flexDirection: 'column',
   padding: '0.2rem',
@@ -36,11 +36,23 @@ export const partition = style({
 
 export const title = style({
   fontSize: '1.5rem',
-  textAlign: 'center',
+  height: '4rem',
+  lineHeight: '2rem',
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  flexWrap: 'wrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 export const description = style({
   position: 'relative',
+});
+
+export const programLabel = style({
+  fontSize: '1.2rem',
 });
 
 export const caption = style({

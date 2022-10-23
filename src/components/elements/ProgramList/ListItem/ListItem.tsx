@@ -11,6 +11,14 @@ const Partition = () => (
   </div>
 );
 
+const Text = ({ text }: { text: string }) => (
+  <div className={styles.title}>
+    {text.split('')?.map((char, i) => (
+      <span key={i}>{char}</span>
+    ))}
+  </div>
+);
+
 export const ListItem = ({ program }: { program: Program }) => {
   const startDate = new Date(program.startAt);
   const endDate = new Date(program.endAt);
@@ -21,15 +29,15 @@ export const ListItem = ({ program }: { program: Program }) => {
   const endMinute = endDate.getMinutes();
 
   return (
-    <Terminal barTitle={program.title}>
+    <Terminal barTitle={program.group.name}>
       <div className={styles.gridItem}>
         <div className={styles.imageWrapper}>
           <Image src={program.thumbnail} layout="fill" alt={program.title} />
         </div>
         <div className={styles.info}>
-          <div className={styles.description}>
-            <p className={styles.caption}>企画名</p>
-            <p className={styles.title}>{program.title}</p>
+          <div>
+            <p className={styles.programLabel}>企画名</p>
+            <Text text={program.title} />
           </div>
           <Partition />
           <div className={styles.description}>
