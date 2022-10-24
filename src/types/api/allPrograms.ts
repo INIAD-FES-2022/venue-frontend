@@ -33,3 +33,9 @@ export type OmittedProgram = {
 };
 
 export type Response = OmittedProgram[];
+
+export type Select = {
+  place?: 'all' | 'online' | 'offline' | 'hybrid';
+  startTime?: string;
+  endTime?: string;
+};

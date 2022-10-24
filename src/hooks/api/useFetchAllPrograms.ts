@@ -1,11 +1,5 @@
 import { useVenueApi } from './useVenueApi';
-import { QueryParams, Response } from '../../types/api/allPrograms';
-
-type Select = {
-  place?: 'all' | 'online' | 'offline';
-  startTime?: string;
-  endTime?: string;
-};
+import { QueryParams, Response, Select } from '../../types/api/allPrograms';
 
 export const useFetchAllPrograms = (
   params: QueryParams = {},
@@ -40,7 +34,7 @@ export const useFetchAllPrograms = (
     };
 
     const timeFilter = (programs: Response): Response => {
-      if (startTime === 'all' || !startTime || !endTime) {
+      if (!startTime || !endTime) {
         return programs;
       }
 
