@@ -42,12 +42,12 @@ export const querySelectors = style({
 export const querySelector = style({
   display: 'flex',
   justifyContent: 'center',
-  gap: '20px',
+  gap: '30px',
   flexWrap: 'wrap',
 });
 
 export const selector = style({
-  width: '8rem',
+  width: '10rem',
   height: '2rem',
   fontSize: '1.2rem',
   textAlign: 'center',
