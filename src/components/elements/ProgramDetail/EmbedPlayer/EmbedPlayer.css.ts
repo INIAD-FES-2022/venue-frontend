@@ -1,5 +1,11 @@
 import { style } from '@vanilla-extract/css';
 
+export const container = style({
+  width: '90%',
+  margin: '0 auto',
+  padding: '30px 0 30px 0',
+});
+
 export const iframeWrapper = style({
   position: 'relative',
   width: '100%',
