@@ -5,17 +5,27 @@ export const container = style({
 });
 
 export const caption = style({
-  fontSize: '1.5rem',
+  fontSize: '1.8rem',
   marginBottom: '10px',
+});
+
+export const headline3 = style({
+  fontSize: '1.5rem',
+  paddingLeft: '10px',
+  marginBottom: '10px',
+  borderLeft: '5px solid #861b1f',
 });
 
 export const withIcon = style({
   display: 'flex',
   alignItems: 'center',
   gap: '0.2rem',
+  whiteSpace: 'nowrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 export const frame = style({
   padding: '20px',
-  backgroundColor: 'rgba(0, 0, 0, 0.1)',
+  backgroundColor: '#ebded5',
 });
