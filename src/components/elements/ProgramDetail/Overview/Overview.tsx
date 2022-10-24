@@ -27,15 +27,16 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
             <Image src={data.thumbnail} alt={data.title} layout="fill" />
           </div>
         </div>
-        <div className={`${styles.info} ${common.frame}`}>
+        <div className={styles.info}>
           <div>
-            <p className={styles.category}>
-              {data.category.map((el) => (
-                <span key={el.uuid}>{el.name}</span>
-              ))}
-            </p>
             <h1 className={styles.title}>{data.title}</h1>
+            <p>{data.group.name}</p>
           </div>
+          <div>
+            <p>{`対面 ${data.isFace2Face ? '◯' : '✕'}`}</p>
+            <p>{`オンライン ${data.isOnline ? '◯' : '✕'}`}</p>
+          </div>
+
           <div>
             <p className={common.withIcon}>
               <HiOutlineClock size={rem} />
@@ -46,7 +47,6 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
               {data.place}
             </p>
           </div>
-          <p>{data.group.name}</p>
         </div>
       </div>
     );
