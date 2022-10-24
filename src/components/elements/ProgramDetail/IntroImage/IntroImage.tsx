@@ -1,6 +1,8 @@
 import { useEffect, useState, useRef } from 'react';
 import Image from 'next/image';
 import Slider, { Settings } from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { Response } from '../../../../types/api/program';
 import { useElementRect } from '../../../../hooks/useElementRect';
 import * as styles from './IntroImage.css';
@@ -26,21 +28,20 @@ export const IntroImage = ({ data }: { data: Response | undefined }) => {
 
   useEffect(() => {
     if (rect?.width) {
-      let displayNum = Math.floor(rect.width / imageWidth);
-      displayNum = Math.max(1, displayNum);
-      const newSetting = data
+      const divNum = 250;
+      const displayNum = Math.floor(rect.width / divNum);
+      const setting = data
         ? {
-            ...sliderSetting,
+            ...settingInit,
             slidesToShow: Math.min(displayNum, data.images.length),
           }
         : {
-            ...sliderSetting,
+            ...settingInit,
             slidesToShow: displayNum,
           };
-      setSliderSetting(newSetting);
+      setSliderSetting(setting);
     }
-    /* eslint-disable react-hooks/exhaustive-deps */
-  }, [data, rect?.width]);
+  }, [rect?.width, data]);
 
   /* eslint-disable */
   return (
@@ -49,9 +50,7 @@ export const IntroImage = ({ data }: { data: Response | undefined }) => {
         <Slider {...sliderSetting}>
           {data?.images.map((image, index) => (
             <div className={styles.imageWrapper} key={index}>
-              <div className={styles.imageWrapper}>
-                <Image src={image} width={imageWidth} height={imageHeight} />
-              </div>
+              <Image src={image} width={imageWidth} height={imageHeight} />
             </div>
           ))}
         </Slider>

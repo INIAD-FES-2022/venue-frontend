@@ -1,7 +1,7 @@
 import { style } from '@vanilla-extract/css';
 
 export const sliderWrapper = style({
-  width: '80%',
+  width: '95%',
   margin: '0 auto',
 });
 
@@ -14,4 +14,5 @@ export const imageWrapper = style({
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
+  padding: '20px',
 });
