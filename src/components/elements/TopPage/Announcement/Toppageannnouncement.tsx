@@ -1,5 +1,5 @@
 import React from 'react';
-import { useFetchAllNotices } from '../../../hooks/api/useFetchAllNotices';
+import { useFetchAllNotices } from '../../../../hooks/api/useFetchAllNotices';
 import * as styles from './TopPageannouncement.css';
 
 export const Notice = () => {

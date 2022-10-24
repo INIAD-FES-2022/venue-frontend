@@ -2,8 +2,8 @@ import { useState, useEffect, useRef } from 'react';
 import Slider, { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import { useFetchAllPrograms } from '../../../hooks/api/useFetchAllPrograms';
-import { useElementRect } from '../../../hooks/useElementRect';
+import { useFetchAllPrograms } from '../../../../hooks/api/useFetchAllPrograms';
+import { useElementRect } from '../../../../hooks/useElementRect';
 import * as styles from './TopPageProgramIntroduction.css';
 
 const DummyItem = () => (
