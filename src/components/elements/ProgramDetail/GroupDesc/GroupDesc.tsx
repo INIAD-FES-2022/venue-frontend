@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import { BiLink } from 'react-icons/bi';
 import { useFetchGroup } from '../../../../hooks/api/useFetchGroup';
-import * as styles from './GroupDesc.css';
 import * as common from '../common.css';
 
 export const GroupDesc = ({ uuid }: { uuid: string }) => {
@@ -12,25 +11,25 @@ export const GroupDesc = ({ uuid }: { uuid: string }) => {
     return (
       <div className={common.container}>
         <h2 className={common.caption}>団体説明</h2>
-        <div className={`${styles.description} ${common.frame}`}>
-          <div className={styles.logoWrapper}>
+        <div className={common.frame}>
+          <h3 className={common.headline3}>{data.name}</h3>
+          <p className="mb-5">{data.description}</p>
+          <h3 className={common.headline3}>ロゴ</h3>
+          <div className="flex w-full items-center justify-center">
             <Image
               src={data.logo}
-              alt={data.name}
-              layout="fill"
-              className={styles.logo}
+              width={150}
+              height={150}
+              alt="logo"
+              className="rounded-xl"
             />
           </div>
-          <div className={styles.info}>
-            <p className={styles.name}>{data.name}</p>
-            <p>{data.description}</p>
-            {data.homepage ? (
-              <a href={data.homepage} className={common.withIcon}>
-                <BiLink size={rem} />
-                {data.homepage}
-              </a>
-            ) : null}
-          </div>
+          {data.homepage ? (
+            <a href={data.homepage} className={common.withIcon}>
+              <BiLink size={rem} />
+              {data.homepage}
+            </a>
+          ) : null}
         </div>
       </div>
     );
