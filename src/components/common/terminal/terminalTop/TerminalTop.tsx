@@ -38,9 +38,7 @@ export const TerminalTop: FC<Props> = ({
     >
       {barTitle}
     </p>
-    <div
-      className={`${styles.buttons} flex w-full flex-row-reverse items-center`}
-    >
+    <div className={`${styles.buttons} flex flex-row-reverse items-center`}>
       <button
         type="button"
         className={`${styles.deleteButton} flex h-full items-center justify-center`}

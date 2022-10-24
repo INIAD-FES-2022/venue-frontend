@@ -34,6 +34,8 @@ export const styles = {
     fontSize: height,
     lineHeight,
     whiteSpace: 'nowrap',
+    overflow: 'hidden',
+    textOverflow: 'ellipsis',
   }),
   deleteButton: style({
     ...buttonStyle,
