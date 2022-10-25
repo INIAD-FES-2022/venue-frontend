@@ -4,6 +4,8 @@ import { NextPage } from 'next/types';
 const Document: NextPage = () => (
   <Html>
     <Head>
+      <link rel="icon" href="/INIADFES6-LOGO_organized.svg" />
+      <title>6th INIAD-FES</title>
       <link
         href="https://fonts.googleapis.com/earlyaccess/hannari.css"
         rel="stylesheet"
