@@ -6,7 +6,6 @@ export const buttonWidth = createVar();
 export const lineHeight = createVar();
 
 const buttonStyle: StyleRule = {
-  'backgroundColor': terminalVars.colors.terminalTop_black,
   'width': buttonWidth,
   ':hover': {
     backgroundColor: terminalVars.colors.terminalTop_black_lighter,
@@ -26,13 +25,14 @@ const buttonStyle: StyleRule = {
 
 export const styles = {
   container: style({
-    backgroundColor: terminalVars.colors.terminalTop_background_lightBrown,
+    backgroundColor: terminalVars.colors.terminal_frame_red,
     height,
   }),
   buttons: style({}),
   barTitle: style({
     fontSize: height,
     lineHeight,
+    color: terminalVars.colors.terminalTop_text_white,
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',

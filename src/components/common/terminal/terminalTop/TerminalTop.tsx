@@ -24,9 +24,7 @@ export const TerminalTop: FC<Props> = ({
   isMinimized = false,
 }) => (
   <div
-    className={`${className} ${styles.container} ${
-      isMinimized ? 'rounded-md' : 'rounded-t-md'
-    } flex w-full justify-between`}
+    className={`${className} ${styles.container} flex w-full justify-between`}
     style={assignInlineVars({ [height]: `${barHeight.toString()}px` })}
   >
     <p
