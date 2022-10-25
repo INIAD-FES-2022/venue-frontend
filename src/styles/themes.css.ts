@@ -5,6 +5,7 @@ export const colors = {
   text_purple_1: '#5C2D36',
   text_purple_2: '#6C2C2F',
   text_brown: '#4D1A06',
+  text_brown_2: '#351916',
   text_blue_1: '#17184B',
   text_gray_1: '#432F2F',
   text_gray_2: '#302833',
@@ -117,7 +118,7 @@ export const globalVars = createGlobalTheme(':root', {
 });
 
 globalStyle('body', {
-  color: globalVars.colors.sub_blue_3,
+  color: globalVars.colors.text_brown_2,
   backgroundColor: '#141414',
   fontFamily: globalVars.fonts.normal_1,
 });
