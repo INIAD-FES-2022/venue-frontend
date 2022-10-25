@@ -6,9 +6,9 @@ import * as layoutStyle from '../../layouts/Layout.css';
 import * as styles from './TopPage.css';
 
 export const TopPage = () => (
-  <>
+  <div className={`${styles.container}`}>
     <Nav className={`${styles.nav}`} />
-    <main className={`${styles.main}`}>
+    <main className={`${styles.main} `}>
       <Terminal barTitle="看板" className={`${styles.mainVisual}`}>
         <p>sample text</p>
       </Terminal>
@@ -23,5 +23,5 @@ export const TopPage = () => (
       </Terminal>
     </main>
     <Footer className={`${styles.footer}`} />
-  </>
+  </div>
 );
