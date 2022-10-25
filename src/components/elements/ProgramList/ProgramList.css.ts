@@ -51,6 +51,6 @@ export const selector = style({
   height: '2rem',
   fontSize: '1.2rem',
   textAlign: 'center',
-  backgroundColor: '#FFF',
   borderBottom: '1px solid #999',
+  backgroundColor: 'rgba(0, 0, 0, 0)',
 });
