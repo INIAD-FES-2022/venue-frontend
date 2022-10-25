@@ -12,14 +12,22 @@ const Partition = () => (
   </div>
 );
 
+const ProgramLink = ({
+  program,
+  children,
+}: {
+  program: Program;
+  children: React.ReactNode;
+}) => <Link href={`./program/${program.uuid}`}>{children}</Link>;
+
 const Text = ({ text, program }: { text: string; program: Program }) => (
-  <Link href={`./program/${program.uuid}`} as={`./program/${program.title}`}>
+  <ProgramLink program={program}>
     <div className={styles.title}>
       {text.split('')?.map((char, i) => (
         <span key={i}>{char}</span>
       ))}
     </div>
-  </Link>
+  </ProgramLink>
 );
 
 export const ListItem = ({ program }: { program: Program }) => {
@@ -35,12 +43,9 @@ export const ListItem = ({ program }: { program: Program }) => {
     <Terminal barTitle={program.group.name}>
       <div className={styles.gridItem}>
         <div className={styles.imageWrapper}>
-          <Link
-            href={`./program/${program.uuid}`}
-            as={`./program/${program.title}`}
-          >
+          <ProgramLink program={program}>
             <Image src={program.thumbnail} layout="fill" alt={program.title} />
-          </Link>
+          </ProgramLink>
         </div>
         <div className={styles.info}>
           <div>
