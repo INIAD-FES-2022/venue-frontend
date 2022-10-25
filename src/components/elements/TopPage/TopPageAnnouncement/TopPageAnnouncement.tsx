@@ -1,8 +1,8 @@
 import React from 'react';
 import { useFetchAllNotices } from '../../../../hooks/api/useFetchAllNotices';
-import * as styles from './TopPageannouncement.css';
+import * as styles from './TopPageAnnouncement.css';
 
-export const Notice = () => {
+export const TopPageAnnouncement = () => {
   const { data } = useFetchAllNotices({
     'sort-by': 'date',
   });
