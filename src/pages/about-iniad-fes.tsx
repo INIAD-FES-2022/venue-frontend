@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Caption } from '../components/elements/About/About';
 
-const AboutIniadFesPage: FC = () => (
+const AboutIniadFesPage: NextPage = () => (
   <>
     <Head>
       <title>about fes</title>
@@ -11,5 +11,5 @@ const AboutIniadFesPage: FC = () => (
   </>
 );
 
-// eslint-disable-next-line import/no-anonymous-default-export, import/no-default-export
+// eslint-disable-next-line import/no-default-export
 export default AboutIniadFesPage;

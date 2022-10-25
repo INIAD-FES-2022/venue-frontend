@@ -1,8 +1,8 @@
-import { FC } from 'react';
+import type { NextPage } from 'next';
 import Head from 'next/head';
 import { Attention } from '../components/elements/Attention/Attention';
 
-const AttentionPage: FC = () => (
+const AttentionPage: NextPage = () => (
   <>
     <Head>
       <title>attention</title>
@@ -11,5 +11,5 @@ const AttentionPage: FC = () => (
   </>
 );
 
-// eslint-disable-next-line import/no-anonymous-default-export, import/no-default-export
+// eslint-disable-next-line import/no-default-export
 export default AttentionPage;
