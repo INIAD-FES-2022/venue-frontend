@@ -26,7 +26,8 @@ export const slider = style({
 });
 
 export const sliderItem = style({
-  padding: '20px',
+  margin: '20px',
+  cursor: 'pointer',
 });
 
 export const thumbnail = style({
@@ -45,6 +46,9 @@ export const dummyImage = style({
 export const title = style({
   textAlign: 'center',
   fontSize: '1.5rem',
+  flexWrap: 'wrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 export const dummyTitle = style({
