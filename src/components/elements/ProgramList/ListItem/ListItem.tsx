@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { Terminal } from '../../../common/terminal/Terminal';
 import { OmittedProgram as Program } from '../../../../types/api/allPrograms';
 import * as styles from './ListItem.css';
@@ -11,12 +12,14 @@ const Partition = () => (
   </div>
 );
 
-const Text = ({ text }: { text: string }) => (
-  <div className={styles.title}>
-    {text.split('')?.map((char, i) => (
-      <span key={i}>{char}</span>
-    ))}
-  </div>
+const Text = ({ text, program }: { text: string; program: Program }) => (
+  <Link href={`./program/${program.uuid}`} as={`./program/${program.title}`}>
+    <div className={styles.title}>
+      {text.split('')?.map((char, i) => (
+        <span key={i}>{char}</span>
+      ))}
+    </div>
+  </Link>
 );
 
 export const ListItem = ({ program }: { program: Program }) => {
@@ -32,12 +35,17 @@ export const ListItem = ({ program }: { program: Program }) => {
     <Terminal barTitle={program.group.name}>
       <div className={styles.gridItem}>
         <div className={styles.imageWrapper}>
-          <Image src={program.thumbnail} layout="fill" alt={program.title} />
+          <Link
+            href={`./program/${program.uuid}`}
+            as={`./program/${program.title}`}
+          >
+            <Image src={program.thumbnail} layout="fill" alt={program.title} />
+          </Link>
         </div>
         <div className={styles.info}>
           <div>
             <p className={styles.programLabel}>企画名</p>
-            <Text text={program.title} />
+            <Text text={program.title} program={program} />
           </div>
           <Partition />
           <div className={styles.description}>

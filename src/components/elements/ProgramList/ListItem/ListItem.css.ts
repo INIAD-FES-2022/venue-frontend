@@ -14,6 +14,7 @@ export const imageWrapper = style({
   width: '100%',
   aspectRatio: '16 / 9',
   position: 'relative',
+  cursor: 'pointer',
 });
 
 export const info = style({
@@ -45,6 +46,7 @@ export const title = style({
   flexWrap: 'wrap',
   overflow: 'hidden',
   textOverflow: 'ellipsis',
+  cursor: 'pointer',
 });
 
 export const description = style({
