@@ -24,9 +24,7 @@ export const TerminalTop: FC<Props> = ({
   isMinimized = false,
 }) => (
   <div
-    className={`${className} ${styles.container} ${
-      isMinimized ? 'rounded-md' : 'rounded-t-md'
-    } flex w-full justify-between`}
+    className={`${className} ${styles.container} flex w-full justify-between`}
     style={assignInlineVars({ [height]: `${barHeight.toString()}px` })}
   >
     <p
@@ -38,9 +36,7 @@ export const TerminalTop: FC<Props> = ({
     >
       {barTitle}
     </p>
-    <div
-      className={`${styles.buttons} flex w-full flex-row-reverse items-center`}
-    >
+    <div className={`${styles.buttons} flex flex-row-reverse items-center`}>
       <button
         type="button"
         className={`${styles.deleteButton} flex h-full items-center justify-center`}

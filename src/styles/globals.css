@@ -1,3 +1,25 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+#__next {
+  background-image: url('/Design_program-list_2_back-ground.svg');
+  background-size: 100%;
+  background-repeat: repeat;
+  position: relative;
+}
+
+#__next::before {
+  content: '"Fox", “Fox” and “Rabit” is created by Agne Alesiute from Noun Project';
+  position: absolute;
+  bottom: 0;
+  right: 1%;
+  color: #383838;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 43.75rem) {
+  #__next::before {
+    font-size: 0.6rem;
+  }
+}

@@ -4,14 +4,15 @@ export const colors = {
   // text colors
   text_purple_1: '#5C2D36',
   text_purple_2: '#6C2C2F',
-  text_brown_1: '#4D1A06',
+  text_brown: '#4D1A06',
+  text_brown_2: '#351916',
   text_blue_1: '#17184B',
   text_gray_1: '#432F2F',
   text_gray_2: '#302833',
   text_gray_3: '#1F3134',
   text_purple_3: '#351916',
   text_green: '#0D270D',
-  text_brown_2: '2E0922',
+  text_brown_3: '2E0922',
 
   // sub color
   sub_green: '#e0ebaf',
@@ -119,7 +120,7 @@ export const globalVars = createGlobalTheme(':root', {
 });
 
 globalStyle('body', {
-  color: globalVars.colors.text_brown_1,
+  color: globalVars.colors.text_brown_2,
   backgroundColor: '#141414',
-  fontFamily: globalVars.fonts.normal_1,
+  fontFamily: globalVars.fonts.normal_2,
 });
