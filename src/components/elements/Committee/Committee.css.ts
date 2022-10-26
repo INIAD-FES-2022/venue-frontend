@@ -11,13 +11,15 @@ export const sitTle = style({
 export const title = style({
   color: '#811C1F',
   textAlign: 'left',
-  fontSize: '21px',
+  fontSize: '2rem',
 });
 
 export const containers = style({
   display: 'flex',
   flexDirection: 'column',
-  margin: '10px 50px 10px 50px',
+  padding: '0 20px',
+  margin: '50px auto 0 auto',
+  maxWidth: '1000px',
 });
 
 export const captions = style({
