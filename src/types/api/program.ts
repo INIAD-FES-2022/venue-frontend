@@ -16,5 +16,5 @@ export type Response = {
   place: string;
   images: Url[];
   isOnline: boolean;
-  isFace2Face: boolean;
+  isFace2face: boolean;
 };

@@ -16,7 +16,7 @@ export const ProgramContent = ({ data }: { data: Response | undefined }) => {
               <EmbedPlayer url={data.streamingUrl} />
             </>
           ) : null}
-          {data.isFace2Face ? (
+          {data.isFace2face ? (
             <>
               <h3 className={common.headline3}>対面</h3>
               <p
