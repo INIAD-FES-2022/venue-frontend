@@ -1,57 +1,33 @@
 import { style, globalStyle, globalKeyframes } from '@vanilla-extract/css';
-import { fonts } from '../../../../styles/themes.css';
+import { fonts, globalVars } from '../../../../styles/themes.css';
+import { smartPhone } from '../../../layouts/Layout.css';
 
 export const mainVisual = style({
-  position: 'relative',
-  width: '100%',
-  height: '100%',
-  backgroundColor: '#FFF5EA',
-  fontFamily: `${fonts.japanese_1}, ${fonts.japanese_2}, ${fonts.japanese_3}, sans-serif`,
-  overflow: 'hidden',
+  'position': 'relative',
+  'width': '100%',
+  'height': '80vh',
+  'minHeight': '430px',
+  'backgroundColor': globalVars.colors.main,
+  'fontFamily': `${fonts.japanese_1}, ${fonts.japanese_2}, ${fonts.japanese_3}, sans-serif`,
+  'overflow': 'hidden',
+  '@media': {
+    [smartPhone]: {},
+  },
 });
 
 globalStyle(`${mainVisual} > *`, {
   position: 'absolute',
 });
 
-export const sun = style({
-  'top': '13%',
-  'right': '10%',
-  'width': '20%',
+export const cloudAndSun = style({
+  'top': '4%',
+  'right': '0%',
+  'width': '32%',
   'userSelect': 'none',
 
   '@media': {
-    'screen and (max-width: 950px)': {
-      top: '10%',
-      right: '5%',
-      width: '40%',
-    },
-
-    'screen and (max-width: 600px)': {
-      top: '5%',
-      right: '5%',
+    [smartPhone]: {
       width: '50%',
-    },
-  },
-});
-
-export const cloud = style({
-  'top': '3%',
-  'right': '-10%',
-  'width': '35%',
-  'userSelect': 'none',
-
-  '@media': {
-    'screen and (max-width: 950px)': {
-      top: '5%',
-      right: '-15%',
-      width: '50%',
-    },
-
-    'screen and (max-width: 600px)': {
-      top: '2%',
-      right: '-30%',
-      width: '70%',
     },
   },
 });
@@ -83,10 +59,10 @@ export const iniadFes = style({
     '&::before': {
       position: 'absolute',
       content: '',
-      top: '0',
+      top: '15%',
       right: '-3%',
       width: '2px',
-      height: '100%',
+      height: '75%',
       backgroundColor: 'black',
       animationName: `${flash}`,
       animationDuration: '1s',
