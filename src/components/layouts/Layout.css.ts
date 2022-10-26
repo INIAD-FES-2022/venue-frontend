@@ -1,17 +1,17 @@
 import { style } from '@vanilla-extract/css';
 
-const smartPhone = 'screen and (max-width: 52rem)';
+export const smartPhone = 'screen and (max-width: 52rem)';
 
 export const main = style({
   'display': 'grid',
   'alignItems': 'start',
-  'gridTemplateColumns': '1fr minmax(18%, 16rem)',
+  'gridTemplateColumns': 'minmax(0, 1fr) minmax(18%, 16rem)',
   'gap': '1.5rem',
   'padding': '1.5rem',
 
   '@media': {
     [smartPhone]: {
-      gridTemplateColumns: '1fr',
+      gridTemplateColumns: 'minmax(0, 1fr)',
     },
   },
 });
