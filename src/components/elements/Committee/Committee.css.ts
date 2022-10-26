@@ -9,13 +9,19 @@ export const committee = style({
   backgroundColor: '#FEF5EA',
 });
 
-export const title = style({
+export const sitTle = style({
   fontSize: '2em',
   color: '#fff',
   backgroundColor: '#811C1F',
   width: '100%',
   padding: '20px',
   textAlign: 'left',
+});
+
+export const title = style({
+  color: '#811C1F',
+  textAlign: 'left',
+  fontSize: '21px',
 });
 
 export const containers = style({
@@ -25,7 +31,6 @@ export const containers = style({
 });
 
 export const captions = style({
-  display: 'flex',
   margin: '5% 0',
 });
 
