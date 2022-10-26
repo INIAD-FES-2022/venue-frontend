@@ -21,11 +21,14 @@ export const containers = style({
 });
 
 export const captions = style({
-  margin: '5% 0',
+  padding: '30px',
   textAlign: 'left',
 });
 
-export const caption = style({});
+export const caption = style({
+  paddingTop: '1.5rem' /* 24px */,
+  paddingBottom: '1.5rem' /* 24px */,
+});
 export const roster = style({});
 
 export const container = style({
