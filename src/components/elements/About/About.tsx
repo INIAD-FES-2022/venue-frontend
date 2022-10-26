@@ -1,4 +1,3 @@
-import { style } from '@vanilla-extract/css';
 import React from 'react';
 import * as styles from './About.css';
 
