@@ -47,7 +47,7 @@ export const querySelector = style({
 });
 
 export const selector = style({
-  width: '10rem',
+  width: '11rem',
   height: '2rem',
   fontSize: '1.2rem',
   textAlign: 'center',
