@@ -1,5 +1,5 @@
 import React from 'react';
-import { Layout } from '../../layouts/Layout';
+import { BsTwitter, BsInstagram } from 'react-icons/bs';
 import { contactStyle } from './Contact.css';
 
 export const Contact: React.FC = () => (
@@ -16,14 +16,16 @@ export const Contact: React.FC = () => (
           href="https://twitter.com/iniadfes"
           target="_brank"
         >
-          Twitter
+          <span className={contactStyle.elementtxt}>Twitter</span>
+          <BsTwitter size={30} />
         </a>
         <a
           className={contactStyle.element}
           href="https://www.instagram.com/iniad_fes/"
           target="_brank"
         >
-          Instagram
+          <span className={contactStyle.elementtxt}>Instagram</span>
+          <BsInstagram size={30} />
         </a>
       </div>
       <br />
