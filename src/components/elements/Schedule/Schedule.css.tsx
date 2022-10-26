@@ -1,5 +1,8 @@
 import { style } from '@vanilla-extract/css';
 
 export const scheduleStyle = {
-  wrapper: style({}),
+  img: style({
+    width: '100%',
+    height: 'auto',
+  }),
 };
