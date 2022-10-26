@@ -9,10 +9,8 @@ export const container = style({
   justifyContent: 'center',
   gap: '50px',
   padding: '50px',
-  backgroundColor: '#FFF',
   overflowWrap: 'anywhere',
   fontFamily: `${fonts.japanese_1}, ${fonts.japanese_2}, ${fonts.japanese_3}, sans-serif`,
-  color: '#000',
 });
 
 globalStyle(`${container} > *`, {
