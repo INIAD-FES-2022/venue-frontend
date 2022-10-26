@@ -9,16 +9,18 @@ export const NoticeList = () => {
 
   return (
     <div className={styles.container}>
-      {data?.map((notice) => (
-        <div key={notice.uuid} className={styles.noticeItem}>
-          <p className={styles.category}>
-            {notice.category.map((el) => (
-              <span key={el.uuid}>{el.name}</span>
-            ))}
-          </p>
-          {notice && <NoticeContent uuid={notice.uuid} />}
-        </div>
-      ))}
+      <div className={styles.inner}>
+        {data?.map((notice) => (
+          <div key={notice.uuid} className={styles.noticeItem}>
+            <p className={styles.category}>
+              {notice.category.map((el) => (
+                <span key={el.uuid}>{el.name}</span>
+              ))}
+            </p>
+            {notice && <NoticeContent uuid={notice.uuid} />}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
