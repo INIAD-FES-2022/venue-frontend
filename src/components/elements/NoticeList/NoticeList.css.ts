@@ -1,26 +1,24 @@
-import { style, globalStyle } from '@vanilla-extract/css';
+import { style } from '@vanilla-extract/css';
 
 export const container = style({
   width: '100%',
   maxWidth: '1000px',
   height: '100%',
-  margin: '30px auto',
+  margin: '20px auto',
+});
+
+export const inner = style({
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
   backgroundColor: '#FEF5EA',
   gap: '20px',
-  padding: '30px',
+  padding: '30px 20px',
+  margin: '10px',
   borderRadius: '50px',
   boxShadow:
     '0 4px 4px 0 rgba(0, 0, 0, 0.25), inset 0 4px 4px 0 rgba(0, 0, 0, 0.25)',
-});
-
-globalStyle(`${container} > *`, {
-  width: '100%',
-  maxWidth: '1000px',
-  padding: '0 20px 0 20px',
 });
 
 export const headline = style({
