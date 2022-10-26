@@ -23,6 +23,7 @@ export const thumbnailWrapper = style({
 export const thumbnail = style({
   position: 'relative',
   width: '100%',
+  minWidth: '350px',
   aspectRatio: '16 / 9',
 });
 
