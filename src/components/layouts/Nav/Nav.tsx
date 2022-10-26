@@ -17,6 +17,7 @@ const navItems = {
   './access': '来場方法',
   './schedule': '日程表',
   './contact': '問い合わせ',
+  './notice': 'お知らせ',
 };
 
 const ReturnTop: React.FC = () => {
