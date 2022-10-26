@@ -24,6 +24,5 @@ export const contactStyle = {
   }),
   elementtxt: style({
     marginRight: '15px',
-    color: colors.accent_blue_1,
   }),
 };

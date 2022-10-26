@@ -17,7 +17,7 @@ export const Contact: React.FC = () => (
           target="_brank"
         >
           <span className={contactStyle.elementtxt}>Twitter</span>
-          <BsTwitter size={30} color="#478384" />
+          <BsTwitter size={30} />
         </a>
         <a
           className={contactStyle.element}
@@ -25,7 +25,7 @@ export const Contact: React.FC = () => (
           target="_brank"
         >
           <span className={contactStyle.elementtxt}>Instagram</span>
-          <BsInstagram size={30} color="#478384" />
+          <BsInstagram size={30} />
         </a>
       </div>
       <br />
