@@ -22,6 +22,7 @@ export const containers = style({
 
 export const captions = style({
   margin: '5% 0',
+  textAlign: 'left',
 });
 
 export const caption = style({});
