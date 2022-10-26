@@ -2,7 +2,7 @@ import React from 'react';
 import * as styles from './About.css';
 
 export const Caption: React.FC = () => (
-  <div className={styles.container}>
+  <div>
     <h1 className={styles.siteTtl}>INIAD-FESについて</h1>
     <div className={styles.univ}>
       <h2 className={styles.title}>INIADとは</h2>
