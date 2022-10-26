@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useState, useEffect, useRef } from 'react';
 import Slider, { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
@@ -71,14 +72,20 @@ export const TopPageProgramIntroduction = () => {
                 <Slider {...sliderSetting} className={styles.slider}>
                   {data.map((program) => {
                     return (
-                      <div key={program.uuid} className={styles.sliderItem}>
-                        <img
-                          src={program.thumbnail}
-                          alt={program.title}
-                          className={styles.thumbnail}
-                        />
-                        <h3 className={styles.title}>{program.title}</h3>
-                      </div>
+                      <Link
+                        key={program.uuid}
+                        href={`./program/${program.uuid}`}
+                        as={`./program/${program.title}`}
+                      >
+                        <div className={styles.sliderItem}>
+                          <img
+                            src={program.thumbnail}
+                            alt={program.title}
+                            className={styles.thumbnail}
+                          />
+                          <h3 className={styles.title}>{program.title}</h3>
+                        </div>
+                      </Link>
                     );
                   })}
                 </Slider>

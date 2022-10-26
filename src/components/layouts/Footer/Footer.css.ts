@@ -57,7 +57,7 @@ export const gridItemList = style({
   },
 });
 
-globalStyle(`${gridItemList} > li > span`, {
+globalStyle(`${gridItemList} > li span`, {
   'display': 'inline',
 
   '@media': {
