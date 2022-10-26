@@ -15,12 +15,14 @@ export const Contact: React.FC = () => (
         <a
           href="https://twitter.com/iniadfes"
           className={contactStyle.elements}
+          target="_brank"
         >
           Twitter
         </a>
         <a
           href="https://www.instagram.com/iniad_fes/"
           className={contactStyle.elements}
+          target="_brank"
         >
           Instagram
         </a>

@@ -4,9 +4,6 @@ export const accessStyle = {
   wrapper: style({
     margin: 'auto',
     marginTop: '50px',
-    borderStyle: 'solid',
-    borderColor: '#F00',
-    borderWidth: '10px',
     width: '800px',
     fontSize: '1rem',
     textAlign: 'left',
@@ -14,8 +11,6 @@ export const accessStyle = {
 
   sectionTitle: style({
     fontSize: '1.5rem',
-    color: '#fff',
-    backgroundColor: '#F00',
     width: '100%',
     padding: '20px',
   }),

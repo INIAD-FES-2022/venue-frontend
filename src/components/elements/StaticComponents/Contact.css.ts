@@ -4,9 +4,6 @@ export const contactStyle = {
   wrapper: style({
     margin: 'auto',
     marginTop: '50px',
-    borderStyle: 'solid',
-    borderColor: '#F00',
-    borderWidth: '10px',
     maxWidth: '800px',
     fontSize: '1rem',
     textAlign: 'left',
