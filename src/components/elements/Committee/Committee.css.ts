@@ -11,21 +11,26 @@ export const sitTle = style({
 export const title = style({
   color: '#811C1F',
   textAlign: 'left',
-  fontSize: '21px',
+  fontSize: '2rem',
 });
 
 export const containers = style({
   display: 'flex',
   flexDirection: 'column',
-  margin: '10px 50px 10px 50px',
+  padding: '0 20px',
+  margin: '50px auto 0 auto',
+  maxWidth: '1000px',
 });
 
 export const captions = style({
-  margin: '5% 0',
+  padding: '30px',
   textAlign: 'left',
 });
 
-export const caption = style({});
+export const caption = style({
+  paddingTop: '1.5rem' /* 24px */,
+  paddingBottom: '1.5rem' /* 24px */,
+});
 export const roster = style({});
 
 export const container = style({
