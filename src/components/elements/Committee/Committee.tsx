@@ -3,7 +3,7 @@ import React from 'react';
 import * as styles from './Committee.css';
 
 export const Committee: React.FC = () => (
-  <div className={styles.committee}>
+  <div>
     <h2 className={styles.sitTle}>INIAD-FESについて</h2>
     <div className={styles.containers}>
       <h2 className={styles.title}>概要</h2>

@@ -1,18 +1,8 @@
 import { style } from '@vanilla-extract/css';
 
-export const committee = style({
-  borderStyle: 'solid',
-  borderColor: '#811C1F',
-  borderWidth: '10px',
-  width: '100%',
-  fontSize: '1rem',
-  backgroundColor: '#FEF5EA',
-});
-
 export const sitTle = style({
   fontSize: '2em',
   color: '#fff',
-  backgroundColor: '#811C1F',
   width: '100%',
   padding: '20px',
   textAlign: 'left',
