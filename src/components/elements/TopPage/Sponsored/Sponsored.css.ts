@@ -11,7 +11,6 @@ export const sponsoredStyle = {
     },
   }),
   container: style({
-    backgroundColor: globalVars.colors.main,
     alignContent: 'space-around',
     display: 'flex',
     flexWrap: 'wrap',

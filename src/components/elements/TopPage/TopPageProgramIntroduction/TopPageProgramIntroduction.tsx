@@ -51,7 +51,6 @@ export const TopPageProgramIntroduction = () => {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.caption}>企画紹介</h2>
       <div className={styles.sliderWrapper} ref={sliderRef}>
         {(() => {
           let result;
@@ -77,14 +76,19 @@ export const TopPageProgramIntroduction = () => {
                         href={`./program/${program.uuid}`}
                         as={`./program/${program.title}`}
                       >
-                        <div className={styles.sliderItem}>
-                          <img
-                            src={program.thumbnail}
-                            alt={program.title}
-                            className={styles.thumbnail}
-                          />
-                          <h3 className={styles.title}>{program.title}</h3>
-                        </div>
+                        <a>
+                          <div className={styles.sliderItem}>
+                            <img
+                              src={program.thumbnail}
+                              alt={program.title}
+                              className={styles.thumbnail}
+                            />
+                            <h3 className={styles.title}>{program.title}</h3>
+                            <p className={styles.groupName}>
+                              {program.group.name}
+                            </p>
+                          </div>
+                        </a>
                       </Link>
                     );
                   })}
@@ -97,6 +101,11 @@ export const TopPageProgramIntroduction = () => {
           return result;
         })()}
       </div>
+      <Link href="/program/">
+        <button type="button" className={`${styles.browseMore}`}>
+          &gt; もっと見る &lt;
+        </button>
+      </Link>
     </div>
   );
 };

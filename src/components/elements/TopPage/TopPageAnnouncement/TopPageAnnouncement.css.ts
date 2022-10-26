@@ -7,7 +7,6 @@ export const container = style({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: '#FFF5EA',
   gap: '20px',
   padding: '20px',
 });
