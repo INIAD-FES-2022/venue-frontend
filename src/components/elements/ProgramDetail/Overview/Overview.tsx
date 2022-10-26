@@ -33,7 +33,7 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
             <p>{data.group.name}</p>
           </div>
           <div>
-            <p>{`対面 ${data.isFace2Face ? '◯' : '✕'}`}</p>
+            <p>{`対面 ${data.isFace2face ? '◯' : '✕'}`}</p>
             <p>{`オンライン ${data.isOnline ? '◯' : '✕'}`}</p>
           </div>
 
