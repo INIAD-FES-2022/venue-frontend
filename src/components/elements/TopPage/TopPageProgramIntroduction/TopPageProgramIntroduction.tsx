@@ -74,7 +74,6 @@ export const TopPageProgramIntroduction = () => {
                       <Link
                         key={program.uuid}
                         href={`./program/${program.uuid}`}
-                        as={`./program/${program.title}`}
                       >
                         <a>
                           <div className={styles.sliderItem}>
