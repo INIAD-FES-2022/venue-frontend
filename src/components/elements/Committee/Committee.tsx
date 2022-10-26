@@ -29,9 +29,7 @@ export const Committee: React.FC = () => (
       <div className={styles.roster}>
         <h2 className={styles.title}>第6回INIAD-FES 実行委員会 委員紹介</h2>
 
-        <div className={styles.captions}>
-          <img src="./router.png" />
-        </div>
+        <img src="./router.png" />
       </div>
     </div>
   </div>
