@@ -1,7 +1,6 @@
 import { style } from '@vanilla-extract/css';
 import * as layoutStyle from '../../layouts/Layout.css';
-
-const smartPhone = 'screen and (max-width: 52rem)';
+import { smartPhone } from '../../layouts/Layout.css';
 
 export const container = style([layoutStyle.main]);
 

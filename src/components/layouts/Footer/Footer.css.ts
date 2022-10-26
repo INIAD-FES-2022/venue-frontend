@@ -1,7 +1,6 @@
 import { style, globalStyle } from '@vanilla-extract/css';
 import { fonts } from '../../../styles/themes.css';
-
-const smartPhone = 'screen and (max-width: 52rem)';
+import { smartPhone } from '../Layout.css';
 
 export const footer = style({
   'display': 'grid',

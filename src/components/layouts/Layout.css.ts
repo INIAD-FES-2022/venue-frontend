@@ -1,6 +1,6 @@
 import { style } from '@vanilla-extract/css';
 
-const smartPhone = 'screen and (max-width: 52rem)';
+export const smartPhone = 'screen and (max-width: 52rem)';
 
 export const main = style({
   'display': 'grid',
