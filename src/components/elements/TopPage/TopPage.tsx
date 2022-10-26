@@ -13,7 +13,7 @@ import * as styles from './TopPage.css';
 export const TopPage = () => (
   <div className={`${styles.container}`}>
     <Nav className={`${styles.nav}`} />
-    <main className={`${styles.main} `}>
+    <main className={`${styles.main} flex flex-col gap-8`}>
       <Terminal barTitle="看板" className={`${styles.mainVisual}`}>
         <MainVisual />
       </Terminal>
