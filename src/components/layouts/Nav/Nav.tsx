@@ -9,15 +9,15 @@ type Props = {
 };
 
 const navItems = {
-  './': '入口',
-  './about-iniad-fes': 'いにあど-ふぇす',
-  './about-committee': '実行委員会',
-  './program': '企画一覧',
-  './attention': '諸注意',
-  './access': '来場方法',
-  './schedule': '日程表',
-  './contact': '問い合わせ',
-  './notice': 'お知らせ',
+  '/': '入口',
+  '/about-iniad-fes': 'いにあど-ふぇす',
+  '/about-committee': '実行委員会',
+  '/program': '企画一覧',
+  '/attention': '諸注意',
+  '/access': '来場方法',
+  '/schedule': '日程表',
+  '/contact': '問い合わせ',
+  '/notice': 'お知らせ',
 };
 
 const ReturnTop: React.FC = () => {
