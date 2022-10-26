@@ -1,29 +1,24 @@
 import { style } from '@vanilla-extract/css';
+import { colors, globalVars } from '../../../styles/themes.css';
 
 export const contactStyle = {
-  wrapper: style({
-    margin: 'auto',
-    marginTop: '50px',
-    maxWidth: '800px',
-    fontSize: '1rem',
-    textAlign: 'left',
-  }),
-
   sectionTitle: style({
-    fontSize: '1.5rem',
-    color: '#fff',
-    backgroundColor: '#F00',
-    width: '100%',
-    padding: '20px',
+    fontSize: '1.8rem',
+    padding: '50px',
+    color: colors.accent_red_5,
   }),
 
-  elements: style({
-    marginLeft: '40px',
+  contact: style({
+    display: 'flex',
+    justifyContent: 'center',
+  }),
+
+  element: style({
+    margin: '30px',
+    color: colors.accent_blue_1,
   }),
 
   contents: style({
-    backgroundColor: 'rgba(255, 255, 255, 0.8)',
-    color: '#000',
     padding: '50px',
   }),
 };
