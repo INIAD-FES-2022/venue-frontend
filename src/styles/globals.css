@@ -23,3 +23,8 @@
     font-size: 0.6rem;
   }
 }
+
+.slick-next::before,
+.slick-prev::before {
+  color: #861b1f !important;
+}
