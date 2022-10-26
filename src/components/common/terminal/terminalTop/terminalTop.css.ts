@@ -28,6 +28,7 @@ export const styles = {
   container: style({
     backgroundColor: terminalVars.colors.terminalTop_background_lightBrown,
     height,
+    color: terminalVars.colors.sub_blue_2,
   }),
   buttons: style({}),
   barTitle: style({
