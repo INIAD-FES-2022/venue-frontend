@@ -15,7 +15,7 @@ type Props = {
 export const Terminal: FC<Props> = ({
   children,
   barTitle = '',
-  barHeight = 24,
+  barHeight = 32,
   isDeletable = false,
   isMinimizable = false,
   className = '',
