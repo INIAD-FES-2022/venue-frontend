@@ -13,6 +13,7 @@ export const caption = style({
 });
 
 export const sliderWrapper = style({
+  'marginTop': '0.5rem',
   'width': '90%',
   '@media': {
     'screen and (max-width: 600px)': {
@@ -26,7 +27,8 @@ export const slider = style({
 });
 
 export const sliderItem = style({
-  padding: '20px',
+  margin: '20px',
+  cursor: 'pointer',
 });
 
 export const thumbnail = style({
@@ -43,8 +45,22 @@ export const dummyImage = style({
 });
 
 export const title = style({
-  textAlign: 'center',
+  marginTop: '-0.1rem',
+  marginLeft: '0.4rem',
+  wordBreak: 'keep-all',
   fontSize: '1.5rem',
+  flexWrap: 'wrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+});
+
+export const groupName = style({
+  marginTop: '-0.3rem',
+  marginLeft: '0.4rem',
+  fontSize: '0.7rem',
+  flexWrap: 'wrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
 });
 
 export const dummyTitle = style({
@@ -53,4 +69,10 @@ export const dummyTitle = style({
   backgroundColor: '#CCCCCC',
   transform: 'scale(0.6, 0.6)',
   transformOrigin: 'center',
+});
+
+export const browseMore = style({
+  marginTop: '2.5rem',
+  marginBottom: '1rem',
+  fontSize: '1.8rem',
 });

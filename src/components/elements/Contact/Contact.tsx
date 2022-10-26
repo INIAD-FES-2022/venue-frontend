@@ -1,18 +1,41 @@
 import React from 'react';
+import { Layout } from '../../layouts/Layout';
 import { contactStyle } from './Contact.css';
 
 export const Contact: React.FC = () => (
-  <div className={contactStyle.wrapper}>
+  <div>
     <h2 className={contactStyle.sectionTitle}>お問い合わせ</h2>
-    <br />
-    <ul>
-      <li className={contactStyle.listElements}>Mail: support@iniadfes.com</li>
-      <li className={contactStyle.listElements}>Twitter DM: @iniadfes</li>
-      <li className={contactStyle.listElements}>Instagram DM: @iniad_fes</li>
-    </ul>
-    <br />
-    <p>
-      大学祭に関するお問い合わせは上記のINIAD-FES実行委員会の連絡先にお願いします。東洋大学および東洋大学情報連携学部へのお問い合わせはお控えください。
-    </p>
+    <div className={contactStyle.contents}>
+      <p>
+        お問い合わせは、下記の公式SNSアカウントのダイレクトメッセージまでお送りください
+      </p>
+      <br />
+      <div className={contactStyle.contact}>
+        <a
+          className={contactStyle.element}
+          href="https://twitter.com/iniadfes"
+          target="_brank"
+        >
+          Twitter
+        </a>
+        <a
+          className={contactStyle.element}
+          href="https://www.instagram.com/iniad_fes/"
+          target="_brank"
+        >
+          Instagram
+        </a>
+      </div>
+      <br />
+      <p>または、電子メールアドレスでもお問い合わせいただけます。</p>
+      <br />
+      <div className={contactStyle.contact}>
+        <p className={contactStyle.element}>support@iniadfes.com</p>
+      </div>
+      <br />
+      <p>
+        ※大学祭に関するお問い合わせは上記のINIAD-FES実行委員会の連絡先にお願いします。東洋大学および東洋大学情報連携学部へのお問い合わせはお控えください。
+      </p>
+    </div>
   </div>
 );

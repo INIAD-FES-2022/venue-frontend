@@ -69,9 +69,7 @@ export const Terminal: FC<Props> = ({
             barHeight={barHeight}
             className=""
           />
-          {!isMinimize && (
-            <div className="terminal-content p-1">{children}</div>
-          )}
+          {!isMinimize && <div className="terminal-content">{children}</div>}
         </div>
       )}
     </>
