@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { url } from 'inspector';
 
 export const container = style({
   width: '100%',
@@ -27,5 +28,8 @@ export const withIcon = style({
 
 export const frame = style({
   padding: '20px',
-  backgroundColor: '#ebded5',
+  backgroundImage:
+    "url('/program_detail/background_accent.svg'), url('/program_detail/background.svg')",
+  backgroundRepeat: 'no-repeat, repeat',
+  backgroundPosition: 'top right',
 });
