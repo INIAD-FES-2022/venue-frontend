@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Terminal } from '../../../common/terminal/Terminal';
 import { OmittedProgram as Program } from '../../../../types/api/allPrograms';
@@ -6,9 +5,9 @@ import * as styles from './ListItem.css';
 
 const Partition = () => (
   <div className={styles.partition}>
-    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
+    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
+    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
+    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
   </div>
 );
 
@@ -42,11 +41,13 @@ export const ListItem = ({ program }: { program: Program }) => {
   return (
     <Terminal barTitle={program.group.name}>
       <div className={styles.gridItem}>
-        <div className={styles.imageWrapper}>
-          <ProgramLink program={program}>
-            <Image src={program.thumbnail} layout="fill" alt={program.title} />
-          </ProgramLink>
-        </div>
+        <ProgramLink program={program}>
+          <img
+            src={program.thumbnail}
+            alt={program.title}
+            className={styles.image}
+          />
+        </ProgramLink>
         <div className={styles.info}>
           <div>
             <p className={styles.programLabel}>企画名</p>

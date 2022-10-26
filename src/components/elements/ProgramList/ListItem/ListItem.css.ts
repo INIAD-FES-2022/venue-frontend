@@ -9,11 +9,9 @@ export const gridItem = style({
   backgroundColor: '#e0ebaf',
 });
 
-export const imageWrapper = style({
-  margin: '0 auto',
+export const image = style({
   width: '100%',
   aspectRatio: '16 / 9',
-  position: 'relative',
   cursor: 'pointer',
 });
 
