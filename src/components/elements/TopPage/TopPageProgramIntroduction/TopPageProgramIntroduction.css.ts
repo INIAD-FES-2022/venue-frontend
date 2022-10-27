@@ -72,7 +72,6 @@ export const dummyTitle = style({
 });
 
 export const browseMore = style({
-  marginTop: '2.5rem',
   marginBottom: '1rem',
   fontSize: '1.8rem',
 });
