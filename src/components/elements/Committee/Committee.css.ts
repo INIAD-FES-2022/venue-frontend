@@ -1,4 +1,5 @@
 import { style } from '@vanilla-extract/css';
+import { fonts } from '../../../styles/themes.css';
 
 export const sitTle = style({
   fontSize: '2em',
@@ -9,6 +10,7 @@ export const sitTle = style({
 });
 
 export const title = style({
+  font: fonts.japanese_1,
   color: '#811C1F',
   textAlign: 'left',
   fontSize: '2rem',
