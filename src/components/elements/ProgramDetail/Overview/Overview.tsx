@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { GrLocation } from 'react-icons/gr';
 import { HiOutlineClock } from 'react-icons/hi';
 import { Response } from '../../../../types/api/program';
@@ -23,9 +22,11 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
     return (
       <div className={styles.overview}>
         <div className={styles.thumbnailWrapper}>
-          <div className={styles.thumbnail}>
-            <Image src={data.thumbnail} alt={data.title} layout="fill" />
-          </div>
+          <img
+            src={data.thumbnail}
+            alt={data.title}
+            className={styles.thumbnail}
+          />
         </div>
         <div className={styles.info}>
           <div>

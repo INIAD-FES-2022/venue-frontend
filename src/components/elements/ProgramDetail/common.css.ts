@@ -1,5 +1,4 @@
 import { style } from '@vanilla-extract/css';
-import { url } from 'inspector';
 
 export const container = style({
   width: '100%',

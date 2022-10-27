@@ -1,5 +1,4 @@
 import { useEffect, useState, useRef } from 'react';
-import Image from 'next/image';
 import Slider, { Settings } from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -17,9 +16,6 @@ const settingInit: Settings = {
   autoplay: true,
   pauseOnHover: true,
 };
-
-const imageWidth = 400;
-const imageHeight = (imageWidth / 16) * 9;
 
 export const IntroImage = ({ data }: { data: Response | undefined }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -50,7 +46,7 @@ export const IntroImage = ({ data }: { data: Response | undefined }) => {
         <Slider {...sliderSetting}>
           {data?.images.map((image, index) => (
             <div className={styles.imageWrapper} key={index}>
-              <Image src={image} width={imageWidth} height={imageHeight} />
+              <img src={image} />
             </div>
           ))}
         </Slider>

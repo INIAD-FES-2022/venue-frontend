@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { useState } from 'react';
 import * as styles from './Accordion.css';
 
@@ -19,14 +18,12 @@ export const Accordion: React.FC<Props> = ({ children, title }) => {
           className={styles.toggleButton}
         >
           <h2>{title}</h2>
-          <Image
+          <img
             src="/accordion_arrow.svg"
             alt="arrow"
             className={`${styles.openArrow} ${
               !isOpen ? '' : styles.closeArrow
             }`}
-            width={20}
-            height={20}
           />
         </button>
       </div>

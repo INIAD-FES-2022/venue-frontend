@@ -17,6 +17,8 @@ export const closeStyle = style({
 export const openArrow = style({
   transform: 'ScaleY(-1)',
   transition: 'transform 0.3s',
+  height: '20px',
+  width: '20px',
 });
 
 export const closeArrow = style({

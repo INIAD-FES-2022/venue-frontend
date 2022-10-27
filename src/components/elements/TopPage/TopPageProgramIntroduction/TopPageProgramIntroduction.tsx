@@ -15,7 +15,6 @@ const DummyItem = () => (
 );
 
 const sliderSettingInit = {
-  dots: true,
   infinite: true,
   speed: 500,
   slidesToShow: 4,
