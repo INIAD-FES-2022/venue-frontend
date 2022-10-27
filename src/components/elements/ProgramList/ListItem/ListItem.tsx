@@ -34,10 +34,10 @@ export const ListItem = ({ program }: { program: Program }) => {
   const startDate = new Date(program.startAt);
   const endDate = new Date(program.endAt);
   const Day = startDate.getDate();
-  const startHour = startDate.getHours();
-  const startMinute = startDate.getMinutes();
-  const endHour = endDate.getHours();
-  const endMinute = endDate.getMinutes();
+  const startHour = startDate.getHours().toString().padStart(2, '0');
+  const startMinute = startDate.getMinutes().toString().padStart(2, '0');
+  const endHour = endDate.getHours().toString().padStart(2, '0');
+  const endMinute = endDate.getMinutes().toString().padStart(2, '0');
 
   return (
     <Terminal barTitle={program.group.name}>
