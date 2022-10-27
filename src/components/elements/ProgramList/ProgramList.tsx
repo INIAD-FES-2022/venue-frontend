@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { useFetchAllPrograms } from '../../../hooks/api/useFetchAllPrograms';
-import { useAllCategories } from '../../../hooks/api/useAllCategories';
 import { QueryParams, Select } from '../../../types/api/allPrograms';
 import { ListItem } from './ListItem/ListItem';
 import * as styles from './ProgramList.css';
@@ -16,7 +15,6 @@ export const ProgramList = () => {
   const [query, setQuery] = useState<QueryParams>({});
   const [select, setSelect] = useState<Select>({});
   const { data } = useFetchAllPrograms(query, select);
-  const { categories } = useAllCategories();
 
   return (
     <div className={styles.container}>
@@ -73,32 +71,6 @@ export const ProgramList = () => {
               <option value="hybrid">ハイブリッド</option>
               <option value="online">オンライン</option>
               <option value="offline">対面</option>
-            </select>
-          </div>
-          <div>
-            <p>カテゴリー</p>
-            <select
-              className={styles.selector}
-              name="category"
-              id="category"
-              onChange={(e) => {
-                setQuery((q) => {
-                  if (e.target.value === 'all') {
-                    const { category: _, ...newQuery } = q; // eslint-disable-line
-
-                    return newQuery;
-                  }
-
-                  return { ...q, category: e.target.value };
-                });
-              }}
-            >
-              <option value="all">すべて</option>
-              {categories.map((category) => (
-                <option value={category.uuid} key={category.uuid}>
-                  {category.name}
-                </option>
-              ))}
             </select>
           </div>
         </div>
