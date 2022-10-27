@@ -10,7 +10,7 @@ export const sitTle = style({
 });
 
 export const title = style({
-  font: fonts.japanese_1,
+  fontFamily: fonts.normal_1,
   color: '#811C1F',
   textAlign: 'left',
   fontSize: '2rem',
