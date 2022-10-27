@@ -12,6 +12,7 @@ export const title = style({
   color: '#811C1F',
   textAlign: 'left',
   fontSize: '21px',
+  padding: '20px 0',
 });
 
 export const containers = style({
@@ -21,7 +22,6 @@ export const containers = style({
 });
 
 export const captions = style({
-  margin: '5% 0',
   textAlign: 'left',
 });
 
