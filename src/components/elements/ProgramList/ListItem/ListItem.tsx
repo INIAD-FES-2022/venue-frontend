@@ -61,7 +61,7 @@ export const ListItem = ({ program }: { program: Program }) => {
           <div className={styles.description}>
             <p className={styles.caption}>日時</p>
             <p className={styles.descriptionText}>
-              神無月{Day === 29 ? '弐拾玖' : '三拾'}日<br />
+              10月{Day}日<br />
               {startHour}:{startMinute}～{endHour}:{endMinute}
             </p>
           </div>
