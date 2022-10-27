@@ -1,5 +1,6 @@
 import React from 'react';
 import * as styles from './Committee.css';
+import { Layout } from '../../layouts/Layout';
 
 export const Committee: React.FC = () => (
   <div>
