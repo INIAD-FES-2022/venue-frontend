@@ -1,4 +1,5 @@
 import { sponsoredStyle } from './Sponsored.css';
+import { url } from '../../../../util/config';
 
 type BannerItem = {
   // name: string; // 名前
@@ -23,7 +24,10 @@ export const AddBanner: React.FC<Props> = (props) => {
           key={index}
           className={sponsoredStyle.banner}
         >
-          <img src={sponsorsList.img} className={`${sponsoredStyle.logo}`} />
+          <img
+            src={url(sponsorsList.img)}
+            className={`${sponsoredStyle.logo}`}
+          />
         </a>
       ))}
     </div>

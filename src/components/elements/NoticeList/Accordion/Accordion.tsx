@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import * as styles from './Accordion.css';
+import { url } from '../../../../util/config';
 
 type Props = {
   children: React.ReactNode;
@@ -19,7 +20,7 @@ export const Accordion: React.FC<Props> = ({ children, title }) => {
         >
           <h2>{title}</h2>
           <img
-            src="/accordion_arrow.svg"
+            src={url('/accordion_arrow.svg')}
             alt="arrow"
             className={`${styles.openArrow} ${
               !isOpen ? '' : styles.closeArrow

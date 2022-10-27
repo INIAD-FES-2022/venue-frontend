@@ -2,12 +2,13 @@ import Link from 'next/link';
 import { Terminal } from '../../../common/terminal/Terminal';
 import { OmittedProgram as Program } from '../../../../types/api/allPrograms';
 import * as styles from './ListItem.css';
+import { url } from '../../../../util/config';
 
 const Partition = () => (
   <div className={styles.partition}>
-    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
-    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
-    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
+    <img src={url('/sakura.svg')} alt="sakura" className="h-3 w-3" />
+    <img src={url('/sakura.svg')} alt="sakura" className="h-3 w-3" />
+    <img src={url('/sakura.svg')} alt="sakura" className="h-3 w-3" />
   </div>
 );
 

@@ -1,8 +1,9 @@
 import * as styles from './Attention.css';
+import { url } from '../../../util/config';
 
 const AttentionLogo = ({ path }: { path: string }) => (
   <div className={styles.attentionIcon}>
-    <img src={path} alt="logo" />
+    <img src={url(path)} alt="logo" />
   </div>
 );
 
