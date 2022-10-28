@@ -13,6 +13,8 @@ type Props = {
   minimizedByDefault?: boolean;
   addFuncOnMinimizeButtonClicked?: () => void;
   addFuncOnMaximizeButtonClicked?: () => void;
+  addFuncOnDeleteButtonClicked?: () => void;
+  addFuncOnOtherPlaceClicked?: () => void;
   className?: string;
 };
 
@@ -26,12 +28,17 @@ export const Terminal: FC<Props> = ({
   minimizedByDefault = false,
   addFuncOnMinimizeButtonClicked = () => {},
   addFuncOnMaximizeButtonClicked = () => {},
+  addFuncOnDeleteButtonClicked = () => {},
+  addFuncOnOtherPlaceClicked = () => {},
   className = '',
 }) => {
   // ターミナル風の何かに表示されている様な見た目にする
-  // TODO barHeightの指定で大きさを調整出来るようにしたい
   // isDeletableがtrueなら×をクリックすることでこのコンポーネントは削除される
-  // isMinimizeがtrueなら_をクリックすると最小化?っぽい見た目になって、その状態で□をクリックすると元に戻る
+  // isMinimizableがtrueなら_をクリックすると最小化?っぽい見た目になって、その状態で□をクリックすると元に戻る
+
+  // TODO ↓これ滅茶苦茶分かり難いので、統合して整理したい
+  // isMinimizeはこのコンポーネント内で最小化の調整をする変数で、
+  // isMinimizedはコンポーネント外から最小化の調整をする変数
 
   const [isDeleted, setIsDeleted] = useState(false);
   const permittedSetIsDeleted = useCallback(
@@ -73,6 +80,7 @@ export const Terminal: FC<Props> = ({
             isMinimized={isMinimize}
             onDeleteButtonClicked={() => {
               permittedSetIsDeleted(true);
+              addFuncOnDeleteButtonClicked();
             }}
             onMaximizeButtonClicked={() => {
               permittedSetIsMinimize(false);
@@ -81,6 +89,9 @@ export const Terminal: FC<Props> = ({
             onMinimizeButtonClicked={() => {
               permittedSetIsMinimize(true);
               addFuncOnMinimizeButtonClicked();
+            }}
+            onOtherPlaceClicked={() => {
+              addFuncOnOtherPlaceClicked();
             }}
             barTitle={barTitle}
             barHeight={barHeight}
