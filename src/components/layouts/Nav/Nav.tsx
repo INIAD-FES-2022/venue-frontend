@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import Link from 'next/link';
 
 import { Terminal } from '../../common/terminal/Terminal';
 import * as styles from './Nav.css';
+import { useWindowSize } from '../../../hooks/useWindowSize';
 
 type Props = {
   className?: string;
@@ -32,17 +33,37 @@ const ReturnTop: React.FC = () => {
   );
 };
 
-export const Nav: React.FC<Props> = ({ className }) => (
-  <Terminal barTitle="誘導" className={className} isMinimizable>
-    <ul className={styles.nav}>
-      {Object.entries(navItems).map(([href, text]) => (
-        <li key={href}>
-          <Link href={href}>{text}</Link>
+export const Nav: React.FC<Props> = ({ className }) => {
+  // const fontSize = parseFloat(
+  //   window
+  //     .getComputedStyle(document.documentElement)
+  //     .getPropertyValue('font-size'),
+  // );
+  const fontSize = 16;
+  const { width } = useWindowSize();
+  const minimizedByDefault = useCallback(
+    // 多分useCallbackをやる必要はないけれど、一応
+    () => width <= fontSize * 52,
+    [width],
+  );
+
+  return (
+    <Terminal
+      barTitle="案内"
+      className={className}
+      isMinimizable
+      minimizedByDefault={minimizedByDefault()}
+    >
+      <ul className={styles.nav}>
+        {Object.entries(navItems).map(([href, text]) => (
+          <li key={href}>
+            <Link href={href}>{text}</Link>
+          </li>
+        ))}
+        <li className={styles.returnTop}>
+          <ReturnTop />
         </li>
-      ))}
-      <li className={styles.returnTop}>
-        <ReturnTop />
-      </li>
-    </ul>
-  </Terminal>
-);
+      </ul>
+    </Terminal>
+  );
+};
