@@ -9,7 +9,10 @@ type Props = {
   barHeight?: number;
   isDeletable?: boolean;
   isMinimizable?: boolean;
+  isMinimized?: boolean;
   minimizedByDefault?: boolean;
+  addFuncOnMinimizeButtonClicked?: () => void;
+  addFuncOnMaximizeButtonClicked?: () => void;
   className?: string;
 };
 
@@ -19,7 +22,10 @@ export const Terminal: FC<Props> = ({
   barHeight = 32,
   isDeletable = false,
   isMinimizable = false,
+  isMinimized = false,
   minimizedByDefault = false,
+  addFuncOnMinimizeButtonClicked = () => {},
+  addFuncOnMaximizeButtonClicked = () => {},
   className = '',
 }) => {
   // ターミナル風の何かに表示されている様な見た目にする
@@ -38,6 +44,9 @@ export const Terminal: FC<Props> = ({
     [isDeletable],
   );
   const [isMinimize, setIsMinimize] = useState(minimizedByDefault);
+  useEffect(() => {
+    setIsMinimize(isMinimized);
+  }, [isMinimized]);
   useEffect(() => {
     setIsMinimize(minimizedByDefault);
   }, [minimizedByDefault]);
@@ -67,9 +76,11 @@ export const Terminal: FC<Props> = ({
             }}
             onMaximizeButtonClicked={() => {
               permittedSetIsMinimize(false);
+              addFuncOnMaximizeButtonClicked();
             }}
             onMinimizeButtonClicked={() => {
               permittedSetIsMinimize(true);
+              addFuncOnMinimizeButtonClicked();
             }}
             barTitle={barTitle}
             barHeight={barHeight}

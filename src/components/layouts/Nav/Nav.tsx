@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useState, useEffect } from 'react';
 import Link from 'next/link';
 
 import { Terminal } from '../../common/terminal/Terminal';
@@ -41,23 +41,36 @@ export const Nav: React.FC<Props> = ({ className }) => {
   // );
   const fontSize = 16;
   const { width } = useWindowSize();
-  const minimizedByDefault = useCallback(
-    // 多分useCallbackをやる必要はないけれど、一応
-    () => width <= fontSize * 52,
-    [width],
-  );
+  const minimizedByDefault = useCallback(() => width <= fontSize * 52, [width]);
+  const [isMinimized, setIsMinimized] = useState(false);
+
+  useEffect(() => {
+    console.log('isMinimized:', isMinimized);
+  }, [isMinimized]);
 
   return (
     <Terminal
       barTitle="案内"
       className={className}
       isMinimizable
+      isMinimized={isMinimized}
       minimizedByDefault={minimizedByDefault()}
+      addFuncOnMaximizeButtonClicked={() => setIsMinimized(false)}
+      addFuncOnMinimizeButtonClicked={() => setIsMinimized(true)}
     >
       <ul className={styles.nav}>
         {Object.entries(navItems).map(([href, text]) => (
           <li key={href}>
-            <Link href={href}>{text}</Link>
+            <Link href={href}>
+              <button
+                type="button"
+                onClick={() => {
+                  setIsMinimized(true);
+                }}
+              >
+                {text}
+              </button>
+            </Link>
           </li>
         ))}
         <li className={styles.returnTop}>
