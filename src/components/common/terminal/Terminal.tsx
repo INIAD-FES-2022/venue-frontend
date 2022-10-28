@@ -1,4 +1,4 @@
-import { FC, ReactNode, useState, useCallback } from 'react';
+import { FC, ReactNode, useState, useCallback, useEffect } from 'react';
 import { styles } from './terminal.css';
 import { TerminalTop } from './terminalTop/TerminalTop';
 // import { terminalThemeClass } from './terminalTheme.css';
@@ -9,6 +9,7 @@ type Props = {
   barHeight?: number;
   isDeletable?: boolean;
   isMinimizable?: boolean;
+  minimizedByDefault?: boolean;
   className?: string;
 };
 
@@ -18,6 +19,7 @@ export const Terminal: FC<Props> = ({
   barHeight = 32,
   isDeletable = false,
   isMinimizable = false,
+  minimizedByDefault = false,
   className = '',
 }) => {
   // ターミナル風の何かに表示されている様な見た目にする
@@ -35,7 +37,11 @@ export const Terminal: FC<Props> = ({
     },
     [isDeletable],
   );
-  const [isMinimize, setIsMinimize] = useState(false);
+  const [isMinimize, setIsMinimize] = useState(minimizedByDefault);
+  useEffect(() => {
+    setIsMinimize(minimizedByDefault);
+  }, [minimizedByDefault]);
+
   const permittedSetIsMinimize = useCallback(
     // 多分useCallbackをやる必要はないけれど、一応
     (value: boolean) => {
