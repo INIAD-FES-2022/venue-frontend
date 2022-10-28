@@ -125,6 +125,9 @@ export const Nav: FC<Props> = ({ className }) => {
           case 'maximized':
             setNavAppearance('minimized');
             break;
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
           default:
             break;
         }
@@ -132,7 +135,7 @@ export const Nav: FC<Props> = ({ className }) => {
       addFuncOnDeleteButtonClicked={() => {
         switch (navAppearance) {
           case 'minimized':
-            setNavAppearance('deleted');
+            setNavAppearance('maximized');
             break;
           default:
             break;
