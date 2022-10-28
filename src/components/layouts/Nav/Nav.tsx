@@ -57,6 +57,7 @@ export const Nav: React.FC<Props> = ({ className }) => {
       minimizedByDefault={minimizedByDefault()}
       addFuncOnMaximizeButtonClicked={() => setIsMinimized(false)}
       addFuncOnMinimizeButtonClicked={() => setIsMinimized(true)}
+      addFuncOnOtherPlaceClicked={() => setIsMinimized(!isMinimized)}
     >
       <ul className={styles.nav}>
         {Object.entries(navItems).map(([href, text]) => (
