@@ -1,6 +1,7 @@
 import React, { useCallback, useState, useEffect } from 'react';
 import Link from 'next/link';
 
+import { GiHamburgerMenu } from 'react-icons/gi';
 import { Terminal } from '../../common/terminal/Terminal';
 import * as styles from './Nav.css';
 import { useWindowSize } from '../../../hooks/useWindowSize';
@@ -43,12 +44,27 @@ export const Nav: React.FC<Props> = ({ className }) => {
   const { width } = useWindowSize();
   const minimizedByDefault = useCallback(() => width <= fontSize * 52, [width]);
   const [isMinimized, setIsMinimized] = useState(false);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   useEffect(() => {
     console.log('isMinimized:', isMinimized);
   }, [isMinimized]);
 
-  return (
+  return isDeleted ? (
+    <div>
+      <button
+        type="button"
+        aria-label="minimal nav"
+        className={styles.minimalNav}
+        onClick={() => {
+          setIsMinimized(false);
+          setIsDeleted(false);
+        }}
+      >
+        <GiHamburgerMenu size={64} color="#ebf3dc" />
+      </button>
+    </div>
+  ) : (
     <Terminal
       barTitle="案内"
       className={className}
@@ -57,6 +73,7 @@ export const Nav: React.FC<Props> = ({ className }) => {
       minimizedByDefault={minimizedByDefault()}
       addFuncOnMaximizeButtonClicked={() => setIsMinimized(false)}
       addFuncOnMinimizeButtonClicked={() => setIsMinimized(true)}
+      addFuncOnDeleteButtonClicked={() => setIsDeleted(true)}
       addFuncOnOtherPlaceClicked={() => setIsMinimized(!isMinimized)}
     >
       <ul className={styles.nav}>
