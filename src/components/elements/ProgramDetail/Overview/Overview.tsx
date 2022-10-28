@@ -38,14 +38,18 @@ export const Overview = ({ data }: { data: Response | undefined }) => {
           </div>
 
           <div>
-            <p className={common.withIcon}>
-              <HiOutlineClock size={rem} />
-              {startDay}日 {startHour}:{startMinute}-{endHour}:{endMinute}
-            </p>
-            <p className={common.withIcon}>
-              <GrLocation size={rem} />
-              {data.place}
-            </p>
+            {data.startAt && data.endAt && (
+              <p className={common.withIcon}>
+                <HiOutlineClock size={rem} />
+                {startDay}日 {startHour}:{startMinute}-{endHour}:{endMinute}
+              </p>
+            )}
+            {data.place && (
+              <p className={common.withIcon}>
+                <GrLocation size={rem} />
+                {data.place}
+              </p>
+            )}
           </div>
         </div>
       </div>
