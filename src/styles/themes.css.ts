@@ -24,7 +24,7 @@ export const colors = {
   sub_blue_3: '#eaf4fc',
 
   // main color
-  main: 'rgba(254,245,234,0.9)',
+  main: 'rgba(254,245,234,0.85)',
 
   // main_pink
   main_pink_1: '#F6BFBC',
