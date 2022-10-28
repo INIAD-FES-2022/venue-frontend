@@ -8,17 +8,17 @@ export const lineHeight = createVar();
 const buttonStyle: StyleRule = {
   'width': buttonWidth,
   ':hover': {
-    backgroundColor: terminalVars.colors.terminalTop_black_lighter,
+    backgroundColor: terminalVars.colors.terminal_frame_red_lighter,
   },
   ':active': {
-    backgroundColor: terminalVars.colors.terminalTop_black_darker,
+    backgroundColor: terminalVars.colors.terminal_frame_red_darker,
   },
   'selectors': {
     '&>svg &:hover': {
-      backgroundColor: terminalVars.colors.terminalTop_black_lighter,
+      backgroundColor: terminalVars.colors.terminal_frame_red_lighter,
     },
     '&>svg &:active': {
-      backgroundColor: terminalVars.colors.terminalTop_black_darker,
+      backgroundColor: terminalVars.colors.terminal_frame_red_darker,
     },
   },
 };
@@ -37,6 +37,7 @@ export const styles = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    cursor: 'default',
   }),
   deleteButton: style({
     ...buttonStyle,
@@ -61,5 +62,10 @@ export const styles = {
   }),
   minimizeButton: style({
     ...buttonStyle,
+  }),
+  otherPlaceButton: style({
+    height: lineHeight,
+    width: 'auto',
+    backgroundColor: '#000',
   }),
 };

@@ -1,5 +1,5 @@
 import { style } from '@vanilla-extract/css';
-import { terminalVars } from './terminalTheme.css';
+import { terminalVars } from '../../../common/terminal/terminalTheme.css';
 
 export const styles = {
   container: style({

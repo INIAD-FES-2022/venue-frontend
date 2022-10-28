@@ -1,6 +1,11 @@
 import { assignInlineVars } from '@vanilla-extract/dynamic';
 import { FC } from 'react';
-import { styles, height, buttonWidth, lineHeight } from './terminalTop.css';
+import {
+  styles,
+  height,
+  buttonWidth,
+  lineHeight,
+} from '../../../../common/terminal/terminalTop/terminalTop.css';
 
 type Props = {
   barTitle?: string;

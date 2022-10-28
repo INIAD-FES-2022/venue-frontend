@@ -10,7 +10,7 @@ export const Access: React.FC = () => (
     <p>WELLB HUB-2からの通り抜けはできません。</p>
     <img
       className={accessStyle.img}
-      src={url('/map.png')}
+      src={url('/map@0.5x@0.5x-8.png')}
       alt="赤羽駅西口から徒歩10分"
     />
   </div>

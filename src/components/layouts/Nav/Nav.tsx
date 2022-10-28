@@ -1,48 +1,160 @@
-import React from 'react';
-import Link from 'next/link';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useLayoutEffect,
+  FC,
+} from 'react';
 
-import { Terminal } from '../../common/terminal/Terminal';
-import * as styles from './Nav.css';
+import { TerminalForNav } from './TerminalFotNav/TerminalForNav';
+// import * as styles from './Nav.css';
+import { useWindowSize } from '../../../hooks/useWindowSize';
+import { DeletedNav } from './DeleteNav/DeleteNav';
+import { NavContent } from './NavContent/NavContent';
+import { NavAppearanceChanges } from './NavAppearanceChange';
 
 type Props = {
   className?: string;
 };
 
-const navItems = {
-  '/': '入口',
-  '/about-iniad-fes': 'いにあど-ふぇす',
-  '/about-committee': '実行委員会',
-  '/program': '企画一覧',
-  '/attention': '諸注意',
-  '/access': '来場方法',
-  '/schedule': '日程表',
-  '/contact': '問い合わせ',
-  '/notice': 'お知らせ',
-};
+export const Nav: FC<Props> = ({ className }) => {
+  const fontSize = 16;
+  const { width } = useWindowSize();
+  const isSmartPhone = useMemo(() => width <= fontSize * 52, [width]);
+  useEffect(() => {
+    console.log(isSmartPhone);
+  }, [isSmartPhone]);
 
-const ReturnTop: React.FC = () => {
-  const returnTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const [navAppearance, setNavAppearance] = useState<NavAppearanceChanges>(
+    isSmartPhone ? 'minimized' : 'maximized',
+  );
+  useLayoutEffect(() => {
+    switch (navAppearance) {
+      case 'minimized':
+        break;
+      case 'maximized':
+        break;
+      case 'deleted':
+        break;
+      case null:
+        console.log(navAppearance);
+        break;
 
-  return (
-    <button onClick={returnTop} type="button">
-      画面上端へ
-    </button>
+      default:
+        break;
+    }
+  }, [navAppearance]);
+
+  // useEffect(() => {
+  //   console.log('isMinimized:', isMinimized);
+  // }, [isMinimized]);
+
+  if (navAppearance === 'deleted') {
+    return <DeletedNav setNavAppearance={setNavAppearance} />;
+  }
+
+  return isSmartPhone ? (
+    <TerminalForNav
+      barTitle="案内"
+      className={className}
+      navAppearance={navAppearance}
+      addFuncOnMaximizeButtonClicked={() => {
+        switch (navAppearance) {
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnMinimizeButtonClicked={() => {
+        switch (navAppearance) {
+          case 'maximized':
+            setNavAppearance('minimized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnDeleteButtonClicked={() => {
+        switch (navAppearance) {
+          case 'maximized':
+            setNavAppearance('deleted');
+            break;
+          case 'minimized':
+            setNavAppearance('deleted');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnOtherPlaceClicked={() => {
+        switch (navAppearance) {
+          case 'maximized':
+            setNavAppearance('minimized');
+            break;
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+    >
+      <NavContent
+        setNavAppearance={setNavAppearance}
+        isSmartPhone={isSmartPhone}
+      />
+    </TerminalForNav>
+  ) : (
+    <TerminalForNav
+      barTitle="案内"
+      className={className}
+      navAppearance={navAppearance}
+      addFuncOnMaximizeButtonClicked={() => {
+        switch (navAppearance) {
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnMinimizeButtonClicked={() => {
+        switch (navAppearance) {
+          case 'maximized':
+            setNavAppearance('minimized');
+            break;
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnDeleteButtonClicked={() => {
+        switch (navAppearance) {
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnOtherPlaceClicked={() => {
+        switch (navAppearance) {
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+    >
+      <NavContent
+        setNavAppearance={setNavAppearance}
+        isSmartPhone={isSmartPhone}
+      />
+    </TerminalForNav>
   );
 };
-
-export const Nav: React.FC<Props> = ({ className }) => (
-  <Terminal barTitle="誘導" className={className} isMinimizable>
-    <ul className={styles.nav}>
-      {Object.entries(navItems).map(([href, text]) => (
-        <li key={href}>
-          <Link href={href}>{text}</Link>
-        </li>
-      ))}
-      <li className={styles.returnTop}>
-        <ReturnTop />
-      </li>
-    </ul>
-  </Terminal>
-);

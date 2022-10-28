@@ -24,10 +24,7 @@ export const AddBanner: React.FC<Props> = (props) => {
           key={index}
           className={sponsoredStyle.banner}
         >
-          <img
-            src={url(sponsorsList.img)}
-            className={`${sponsoredStyle.logo}`}
-          />
+          <img src={sponsorsList.img} className={`${sponsoredStyle.logo}`} />
         </a>
       ))}
     </div>

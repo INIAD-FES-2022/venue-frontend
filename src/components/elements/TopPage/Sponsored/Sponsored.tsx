@@ -1,6 +1,7 @@
 import { AddBanner } from './AddBanner';
 
 export const Sponsored = () => {
+  const API_ROOT = process.env.NEXT_PUBLIC_API_ROOT ?? '';
   type BannerItem = {
     // name: string; // 名前
     url: string; // URL
@@ -9,59 +10,59 @@ export const Sponsored = () => {
   const sponsorsList: BannerItem[] = [
     {
       url: 'https://www.apire.net/',
-      img: '/sponsors/アピレ.png',
+      img: `${API_ROOT}image/apre.png`,
     },
     // {
     //   url: 'https://goo.gl/maps/Yye178BUSuZnPNPf9',
-    //   img: '/sponsors/',
+    //   img: API_ROOT+'/sponsors/',
     // },
     {
       url: 'https://www.akabane.ed.jp/',
-      img: '/sponsors/赤羽幼稚園・赤羽こども園.png',
+      img: `${API_ROOT}image/akabane-kindergarten.png`,
     },
     {
       url: 'https://www.co-yard.com/',
-      img: '/sponsors/カレッジヤード.jpg',
+      img: `${API_ROOT}image/co-yard.jpg`,
     },
     {
       url: 'https://www.maeno-yakkyoku.co.jp/shoplist/%e8%b5%a4%e7%be%bd%e6%9c%ac%e5%ba%97/',
-      img: '/sponsors/マエノ薬局.jpg',
+      img: `${API_ROOT}image/maeno-drug.jpg`,
     },
     {
       url: 'https://www.mast-kiya.net/',
-      img: '/sponsors/シャーメゾンショップ 有限会社喜屋.png',
+      img: `${API_ROOT}image/shamaison_kiya.png`,
     },
     {
       url: 'https://goo.gl/maps/WKgjX4LFbEB6uYdG7',
-      img: '/sponsors/食事処 三忠.png',
+      img: `${API_ROOT}image/sanchu.png`,
     },
     {
       url: 'https://www.johokubank.jp/',
-      img: '/sponsors/城北信用金庫.jpg',
+      img: `${API_ROOT}image/johoku.jpg`,
     },
     {
       url: 'http://www.c21daikei.co.jp/',
-      img: '/sponsors/センチュリー21 大恵商事.jpg',
+      img: `${API_ROOT}image/c21_daikei.jpg`,
     },
     {
       url: 'https://www.next-gears.net/',
-      img: '/sponsors/ネクストギアーズ.png',
+      img: `${API_ROOT}image/nextgears.png`,
     },
     {
       url: 'https://twitter.com/bp1_akabane',
-      img: '/sponsors/ブックスページワン イトーヨーカドー赤羽店.svg',
+      img: `${API_ROOT}image/bookspage1.svg`,
     },
     {
       url: 'https://goo.gl/maps/n5NCcZ6RuNzmxJou6',
-      img: '/sponsors/ベンディカ.jpg',
+      img: `${API_ROOT}image/bendika.jpg`,
     },
     {
       url: 'http://www.machi-kita.jp/',
-      img: '/sponsors/まちづくり北株式会社.jpg',
+      img: `${API_ROOT}image/machikita.png`,
     },
     {
       url: 'https://mangetutanuki.com/aeaefa/',
-      img: '/sponsors/手打ら〜めん満月.jpg',
+      img: `${API_ROOT}image/mangetsu.jpg`,
     },
   ]; // 協賛のリスト
 
