@@ -8,6 +8,7 @@ type Props = {
   onDeleteButtonClicked: () => void;
   onMaximizeButtonClicked: () => void;
   onMinimizeButtonClicked: () => void;
+  onOtherPlaceClicked: () => void;
   className?: string;
   isMinimized?: boolean;
 };
@@ -20,6 +21,7 @@ export const TerminalTop: FC<Props> = ({
   onDeleteButtonClicked,
   onMaximizeButtonClicked,
   onMinimizeButtonClicked,
+  onOtherPlaceClicked,
   className = '',
   isMinimized = false,
 }) => (
@@ -27,15 +29,17 @@ export const TerminalTop: FC<Props> = ({
     className={`${className} ${styles.container} flex w-full justify-between`}
     style={assignInlineVars({ [height]: `${barHeight.toString()}px` })}
   >
-    <p
-      className={`${styles.barTitle} h-full px-4 text-center`}
+    <button
+      type="button"
+      className={`${styles.barTitle} h-full w-full px-4 text-left`}
       style={assignInlineVars({
         [height]: `${(barHeight * 0.7).toString()}px`,
         [lineHeight]: (1 / 0.7).toString(),
       })}
+      onClick={onOtherPlaceClicked}
     >
       {barTitle}
-    </p>
+    </button>
     <div className={`${styles.buttons} flex flex-row-reverse items-center`}>
       <button
         type="button"

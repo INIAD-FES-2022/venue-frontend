@@ -18,6 +18,11 @@ const nextConfig = {
   images: {
     domains: [process.env.HOSTNAME],
   },
+  experimental: {
+    images: {
+      unoptimized: true,
+    },
+  },
 };
 
 module.exports = withVanillaExtract(nextConfig);

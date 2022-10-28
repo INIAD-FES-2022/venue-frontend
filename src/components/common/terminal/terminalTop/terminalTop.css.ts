@@ -37,6 +37,7 @@ export const styles = {
     whiteSpace: 'nowrap',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
+    cursor: 'default',
   }),
   deleteButton: style({
     ...buttonStyle,
@@ -61,5 +62,10 @@ export const styles = {
   }),
   minimizeButton: style({
     ...buttonStyle,
+  }),
+  otherPlaceButton: style({
+    height: lineHeight,
+    width: 'auto',
+    backgroundColor: '#000',
   }),
 };
