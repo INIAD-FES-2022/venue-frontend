@@ -1,100 +1,157 @@
-import React, { useCallback, useState, useEffect } from 'react';
-import Link from 'next/link';
+import React, {
+  useState,
+  useEffect,
+  useMemo,
+  useLayoutEffect,
+  FC,
+} from 'react';
 
-import { GiHamburgerMenu } from 'react-icons/gi';
-import { Terminal } from '../../common/terminal/Terminal';
-import * as styles from './Nav.css';
+import { TerminalForNav } from './TerminalFotNav/TerminalForNav';
+// import * as styles from './Nav.css';
 import { useWindowSize } from '../../../hooks/useWindowSize';
+import { DeletedNav } from './DeleteNav/DeleteNav';
+import { NavContent } from './NavContent/NavContent';
+import { NavAppearanceChanges } from './NavAppearanceChange';
 
 type Props = {
   className?: string;
 };
 
-const navItems = {
-  '/': '入口',
-  '/about-iniad-fes': 'いにあど-ふぇす',
-  '/about-committee': '実行委員会',
-  '/program': '企画一覧',
-  '/attention': '諸注意',
-  '/access': '来場方法',
-  '/schedule': '日程表',
-  '/contact': '問い合わせ',
-  '/notice': 'お知らせ',
-};
-
-const ReturnTop: React.FC = () => {
-  const returnTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    <button onClick={returnTop} type="button">
-      画面上端へ
-    </button>
-  );
-};
-
-export const Nav: React.FC<Props> = ({ className }) => {
-  // const fontSize = parseFloat(
-  //   window
-  //     .getComputedStyle(document.documentElement)
-  //     .getPropertyValue('font-size'),
-  // );
+export const Nav: FC<Props> = ({ className }) => {
   const fontSize = 16;
   const { width } = useWindowSize();
-  const minimizedByDefault = useCallback(() => width <= fontSize * 52, [width]);
-  const [isMinimized, setIsMinimized] = useState(false);
-  const [isDeleted, setIsDeleted] = useState(false);
-
+  const isSmartPhone = useMemo(() => width <= fontSize * 52, [width]);
   useEffect(() => {
-    console.log('isMinimized:', isMinimized);
-  }, [isMinimized]);
+    console.log(isSmartPhone);
+  }, [isSmartPhone]);
 
-  return isDeleted ? (
-    <div>
-      <button
-        type="button"
-        aria-label="minimal nav"
-        className={styles.minimalNav}
-        onClick={() => {
-          setIsMinimized(false);
-          setIsDeleted(false);
-        }}
-      >
-        <GiHamburgerMenu size={64} color="#ebf3dc" />
-      </button>
-    </div>
-  ) : (
-    <Terminal
+  const [navAppearance, setNavAppearance] = useState<NavAppearanceChanges>(
+    isSmartPhone ? 'minimized' : 'maximized',
+  );
+  useLayoutEffect(() => {
+    switch (navAppearance) {
+      case 'minimized':
+        break;
+      case 'maximized':
+        break;
+      case 'deleted':
+        break;
+      case null:
+        console.log(navAppearance);
+        break;
+
+      default:
+        break;
+    }
+  }, [navAppearance]);
+
+  // useEffect(() => {
+  //   console.log('isMinimized:', isMinimized);
+  // }, [isMinimized]);
+
+  if (navAppearance === 'deleted') {
+    return <DeletedNav setNavAppearance={setNavAppearance} />;
+  }
+
+  return isSmartPhone ? (
+    <TerminalForNav
       barTitle="案内"
       className={className}
-      isMinimizable
-      isMinimized={isMinimized}
-      minimizedByDefault={minimizedByDefault()}
-      addFuncOnMaximizeButtonClicked={() => setIsMinimized(false)}
-      addFuncOnMinimizeButtonClicked={() => setIsMinimized(true)}
-      addFuncOnDeleteButtonClicked={() => setIsDeleted(true)}
-      addFuncOnOtherPlaceClicked={() => setIsMinimized(!isMinimized)}
+      navAppearance={navAppearance}
+      addFuncOnMaximizeButtonClicked={() => {
+        switch (navAppearance) {
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnMinimizeButtonClicked={() => {
+        switch (navAppearance) {
+          case 'maximized':
+            setNavAppearance('minimized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnDeleteButtonClicked={() => {
+        switch (navAppearance) {
+          case 'maximized':
+            setNavAppearance('deleted');
+            break;
+          case 'minimized':
+            setNavAppearance('deleted');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnOtherPlaceClicked={() => {
+        switch (navAppearance) {
+          case 'maximized':
+            setNavAppearance('minimized');
+            break;
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
     >
-      <ul className={styles.nav}>
-        {Object.entries(navItems).map(([href, text]) => (
-          <li key={href}>
-            <Link href={href}>
-              <button
-                type="button"
-                onClick={() => {
-                  setIsMinimized(true);
-                }}
-              >
-                {text}
-              </button>
-            </Link>
-          </li>
-        ))}
-        <li className={styles.returnTop}>
-          <ReturnTop />
-        </li>
-      </ul>
-    </Terminal>
+      <NavContent
+        setNavAppearance={setNavAppearance}
+        isSmartPhone={isSmartPhone}
+      />
+    </TerminalForNav>
+  ) : (
+    <TerminalForNav
+      barTitle="案内"
+      className={className}
+      navAppearance={navAppearance}
+      addFuncOnMaximizeButtonClicked={() => {
+        switch (navAppearance) {
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnMinimizeButtonClicked={() => {
+        switch (navAppearance) {
+          case 'maximized':
+            setNavAppearance('minimized');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnDeleteButtonClicked={() => {
+        switch (navAppearance) {
+          case 'minimized':
+            setNavAppearance('deleted');
+            break;
+          default:
+            break;
+        }
+      }}
+      addFuncOnOtherPlaceClicked={() => {
+        switch (navAppearance) {
+          case 'minimized':
+            setNavAppearance('maximized');
+            break;
+          default:
+            break;
+        }
+      }}
+    >
+      <NavContent
+        setNavAppearance={setNavAppearance}
+        isSmartPhone={isSmartPhone}
+      />
+    </TerminalForNav>
   );
 };
