@@ -4,7 +4,7 @@ export const Schedule = () => (
   <div>
     <img
       className={scheduleStyle.img}
-      src="./iniadhall-schedule.png"
+      src="./iniadhall-schedule.svg"
       alt="timeTable"
     />
   </div>
