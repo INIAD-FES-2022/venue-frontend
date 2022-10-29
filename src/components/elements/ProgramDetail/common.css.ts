@@ -31,4 +31,6 @@ export const frame = style({
     "url('/program_detail/background_accent.svg'), url('/program_detail/background.svg')",
   backgroundRepeat: 'no-repeat, repeat',
   backgroundPosition: 'top right',
+  boxShadow: '1px 2px 8px 0px rgb(1, 1, 1 , 0.32)',
+  borderRadius: '2px',
 });

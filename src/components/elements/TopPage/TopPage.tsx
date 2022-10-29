@@ -9,6 +9,7 @@ import { TopPageAnnouncement } from './TopPageAnnouncement/TopPageAnnouncement';
 import { Sponsored } from './Sponsored/Sponsored';
 
 import * as styles from './TopPage.css';
+import { Pamphlet } from './Pamphlet/Pamphlet';
 
 export const TopPage = () => (
   <div className={`${styles.container}`}>
@@ -18,6 +19,7 @@ export const TopPage = () => (
       </Terminal>
       <Terminal barTitle="企画紹介" className={`${styles.programIntroduction}`}>
         <TopPageProgramIntroduction />
+        <Pamphlet />
       </Terminal>
       <Terminal barTitle="お知らせ" className={`${styles.announcement}`}>
         <TopPageAnnouncement />
