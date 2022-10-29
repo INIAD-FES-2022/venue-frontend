@@ -24,7 +24,8 @@ export const colors = {
   sub_blue_3: '#eaf4fc',
 
   // main color
-  main: 'rgba(254,245,234,0.9)',
+  main: 'rgba(254,245,234,0.85)',
+
   // main_pink
   main_pink_1: '#F6BFBC',
   main_pink_2: '#F5B1AA',
@@ -98,6 +99,7 @@ export const colors = {
   accent_blue_1: '#478384',
   accent_blue_2: '#9079AD',
   accent_purple_1: '#F73B70',
+  accent_red: '#861b1f',
 };
 
 export const fonts = {
@@ -121,6 +123,6 @@ export const globalVars = createGlobalTheme(':root', {
 
 globalStyle('body', {
   color: globalVars.colors.text_brown_2,
-  backgroundColor: '#141414',
+  backgroundColor: '#1a1418',
   fontFamily: globalVars.fonts.normal_2,
 });
