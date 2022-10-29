@@ -19,12 +19,12 @@ export const sponsoredStyle = {
   logo: style({
     'height': '100%',
     'borderRadius': '3px',
-    'boxShadow': '2px 2px 8px #111111',
+    'boxShadow': '2px 2px 8px rgb(1, 1, 1 , 0.72)',
     ':hover': {
-      boxShadow: '1px 1px 4px #111111',
+      boxShadow: '1px 1px 4px rgb(1, 1, 1 , 0.72)',
     },
     ':active': {
-      boxShadow: '1px 1px 0px #111111',
+      boxShadow: '1px 1px 0px rgb(1, 1, 1 , 0.72)',
     },
   }),
 };
