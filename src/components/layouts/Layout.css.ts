@@ -21,6 +21,7 @@ export const nav = style({
   'gridRow': '1 / 3',
   'position': 'sticky',
   'top': '1.5rem',
+  'zIndex': 999,
 
   '@media': {
     [smartPhone]: {
