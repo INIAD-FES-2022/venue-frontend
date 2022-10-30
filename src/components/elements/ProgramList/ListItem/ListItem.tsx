@@ -42,11 +42,15 @@ export const ListItem = ({ program }: { program: Program }) => {
     <Terminal barTitle={program.group.name}>
       <div className={styles.gridItem}>
         <ProgramLink program={program}>
-          <img
-            src={program.thumbnail}
-            alt={program.title}
-            className={styles.image}
-          />
+          {program.thumbnail ? (
+            <img
+              src={program.thumbnail}
+              alt={program.title}
+              className={styles.image}
+            />
+          ) : (
+            <p className={styles.insteadOfImage}>{program.title}</p>
+          )}
         </ProgramLink>
         <div className={styles.info}>
           <div>

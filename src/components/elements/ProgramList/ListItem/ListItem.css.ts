@@ -15,6 +15,19 @@ export const image = style({
   cursor: 'pointer',
 });
 
+export const insteadOfImage = style({
+  width: '100%',
+  aspectRatio: '16 / 9',
+  cursor: 'pointer',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: '1.5rem',
+  flexWrap: 'wrap',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+});
+
 export const info = style({
   width: '100%',
   flexGrow: 1,
