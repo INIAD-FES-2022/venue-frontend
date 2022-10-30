@@ -1,5 +1,6 @@
 import React from 'react';
 import * as styles from './Committee.css';
+import { url } from '../../../util/config';
 
 export const Committee: React.FC = () => (
   <div>
@@ -29,7 +30,7 @@ export const Committee: React.FC = () => (
       <div className={styles.roster}>
         <h2 className={styles.title}>第6回INIAD-FES 実行委員会 委員紹介</h2>
 
-        <img src="./router.png" />
+        <img src={url('/router.png')} />
       </div>
     </div>
   </div>

@@ -1,4 +1,5 @@
 import { sponsoredStyle } from './Sponsored.css';
+import { url } from '../../../../util/config';
 
 type BannerItem = {
   // name: string; // 名前

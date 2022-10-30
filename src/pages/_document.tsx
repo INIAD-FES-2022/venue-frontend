@@ -1,10 +1,11 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import { NextPage } from 'next/types';
+import { url } from '../util/config';
 
 const Document: NextPage = () => (
   <Html>
     <Head>
-      <link rel="icon" href="/INIADFES6-LOGO_organized.svg" />
+      <link rel="icon" href={url('/INIADFES6-LOGO_organized.svg')} />
       <title>6th INIAD-FES</title>
       <link
         href="https://fonts.googleapis.com/earlyaccess/hannari.css"

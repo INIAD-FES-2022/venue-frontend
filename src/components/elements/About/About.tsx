@@ -1,5 +1,6 @@
 import React from 'react';
 import * as styles from './About.css';
+import { url } from '../../../util/config';
 
 export const Caption: React.FC = () => (
   <div>
@@ -26,7 +27,7 @@ export const Caption: React.FC = () => (
     <div className={styles.theme}>
       <h2 className={styles.title}>第6回INIAD-FESテーマ「新タナ折衷」</h2>
       <div className={styles.caption}>
-        <img src="./logo.png" />
+        <img src={url('/logo.png')} />
         <p>
           第6回INIAD-FESのテーマは「新タナ折衷」です。このテーマは、様々な変化が訪れているINIAD-FESや社会に対し、今までとこれからのどちらか一方をただ受け入れるのでなく、それらをうまく組み合わせ、再構築する「新しい折衷案」を来場した方に伝える、という意味で設定しました。
           対面とオンライン、新しく赤羽台キャンパスに移転してきたライフデザイン学部、新しいINIADのカリキュラムであるINIAD2.0への遷移など、第6回INIAD-FESを取り巻く様々な変化や革新の中で、学生たちが生み出したハイブリッド開催を始めとする「新タナ折衷」にぜひ注目して楽しんでください。
