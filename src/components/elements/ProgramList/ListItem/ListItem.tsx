@@ -56,15 +56,19 @@ export const ListItem = ({ program }: { program: Program }) => {
           <Partition />
           <div className={styles.description}>
             <p className={styles.caption}>場所</p>
-            <p className={styles.descriptionText}>{program.place}</p>
+            <p className={styles.descriptionText}>{program.place || '-'}</p>
           </div>
           <Partition />
           <div className={styles.description}>
             <p className={styles.caption}>日時</p>
-            <p className={styles.descriptionText}>
-              10月{Day}日<br />
-              {startHour}:{startMinute}～{endHour}:{endMinute}
-            </p>
+            {program.startAt ? (
+              <p className={styles.descriptionText}>
+                10月{Day}日<br />
+                {startHour}:{startMinute}～{endHour}:{endMinute}
+              </p>
+            ) : (
+              <p className={styles.descriptionText}>-</p>
+            )}
           </div>
         </div>
       </div>
