@@ -4,7 +4,7 @@ import * as styles from './pamphlet.css';
 export const Pamphlet = () => (
   <div className={styles.container}>
     <a
-      href="https://my.ebook5.net/u/Il0sRx/"
+      href="https://my.ebook5.net/u/uxYZgZ/"
       target="_blank"
       rel="noreferrer"
       className={styles.frame}
