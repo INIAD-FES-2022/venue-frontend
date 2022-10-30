@@ -1,10 +1,4 @@
-import React, {
-  useState,
-  useEffect,
-  useMemo,
-  useLayoutEffect,
-  FC,
-} from 'react';
+import React, { useState, useEffect, useMemo, FC } from 'react';
 
 import { TerminalForNav } from './TerminalFotNav/TerminalForNav';
 // import * as styles from './Nav.css';
@@ -28,7 +22,7 @@ export const Nav: FC<Props> = ({ className }) => {
   const [navAppearance, setNavAppearance] = useState<NavAppearanceChanges>(
     isSmartPhone ? 'minimized' : 'maximized',
   );
-  useLayoutEffect(() => {
+  useEffect(() => {
     switch (navAppearance) {
       case 'minimized':
         break;
