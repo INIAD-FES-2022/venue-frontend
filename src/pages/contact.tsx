@@ -1,18 +1,18 @@
 import Head from 'next/head';
+import { NextPage } from 'next/types';
 import { Contact } from '../components/elements/Contact/Contact';
 import { Layout } from '../components/layouts/Layout';
-import type { NextPageWithLayout } from './_app';
 
-const ContactPage: NextPageWithLayout = () => (
+const ContactPage: NextPage = () => (
   <>
     <Head>
       <title>contact</title>
     </Head>
-    <Contact />
+    <Layout title="問い合わせ">
+      <Contact />
+    </Layout>
   </>
 );
-
-ContactPage.getLayout = (page) => <Layout title="問い合わせ">{page}</Layout>;
 
 // eslint-disable-next-line import/no-default-export
 export default ContactPage;

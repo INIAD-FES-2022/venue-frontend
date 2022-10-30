@@ -1,18 +1,18 @@
 import Head from 'next/head';
+import { NextPage } from 'next/types';
 import { Schedule } from '../components/elements/Schedule/Schedule';
 import { Layout } from '../components/layouts/Layout';
-import type { NextPageWithLayout } from './_app';
 
-const NoticePage: NextPageWithLayout = () => (
+const NoticePage: NextPage = () => (
   <>
     <Head>
       <title>Schedule</title>
     </Head>
-    <Schedule />
+    <Layout title="日程表">
+      <Schedule />
+    </Layout>
   </>
 );
-
-NoticePage.getLayout = (page) => <Layout title="日程表">{page}</Layout>;
 
 // eslint-disable-next-line import/no-default-export
 export default NoticePage;
