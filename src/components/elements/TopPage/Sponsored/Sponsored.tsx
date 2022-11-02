@@ -49,7 +49,7 @@ export const Sponsored = () => {
     },
     {
       url: 'https://twitter.com/bp1_akabane',
-      img: '/sponsors/ブックスページワン.jpeg',
+      img: '/sponsors/ブックスページワン イトーヨーカドー赤羽店.svg',
     },
     {
       url: 'https://goo.gl/maps/n5NCcZ6RuNzmxJou6',

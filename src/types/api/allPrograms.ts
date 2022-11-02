@@ -29,7 +29,7 @@ export type OmittedProgram = {
   thumbnail: Url;
   category: Category[];
   isOnline: boolean;
-  isFace2Face: boolean;
+  isFace2face: boolean;
 };
 
 export type Response = OmittedProgram[];

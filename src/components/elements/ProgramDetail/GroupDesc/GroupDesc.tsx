@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import { BiLink } from 'react-icons/bi';
 import { useFetchGroup } from '../../../../hooks/api/useFetchGroup';
 import * as common from '../common.css';
@@ -16,13 +15,7 @@ export const GroupDesc = ({ uuid }: { uuid: string }) => {
           <p className="mb-5">{data.description}</p>
           <h3 className={common.headline3}>ロゴ</h3>
           <div className="flex w-full items-center justify-center">
-            <Image
-              src={data.logo}
-              width={150}
-              height={150}
-              alt="logo"
-              className="rounded-xl"
-            />
+            <img src={data.logo} alt="logo" className="h-36 w-36 rounded-xl" />
           </div>
           {data.homepage ? (
             <a href={data.homepage} className={common.withIcon}>

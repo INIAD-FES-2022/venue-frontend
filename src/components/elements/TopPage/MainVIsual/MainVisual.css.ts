@@ -7,7 +7,6 @@ export const mainVisual = style({
   'width': '100%',
   'height': '80vh',
   'minHeight': '430px',
-  'backgroundColor': globalVars.colors.main,
   'fontFamily': `${fonts.japanese_1}, ${fonts.japanese_2}, ${fonts.japanese_3}, sans-serif`,
   'overflow': 'hidden',
   '@media': {

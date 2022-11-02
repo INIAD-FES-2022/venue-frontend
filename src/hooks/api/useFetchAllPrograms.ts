@@ -21,12 +21,12 @@ export const useFetchAllPrograms = (
       }
 
       if (place === 'offline') {
-        return programs.filter((program) => program.isFace2Face);
+        return programs.filter((program) => program.isFace2face);
       }
 
       if (place === 'hybrid') {
         return programs.filter(
-          (program) => program.isOnline && program.isFace2Face,
+          (program) => program.isOnline && program.isFace2face,
         );
       }
 

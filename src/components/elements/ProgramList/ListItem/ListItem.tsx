@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { Terminal } from '../../../common/terminal/Terminal';
 import { OmittedProgram as Program } from '../../../../types/api/allPrograms';
@@ -6,9 +5,9 @@ import * as styles from './ListItem.css';
 
 const Partition = () => (
   <div className={styles.partition}>
-    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
-    <Image src="/sakura.svg" alt="sakura" height={12} width={12} />
+    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
+    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
+    <img src="/sakura.svg" alt="sakura" className="h-3 w-3" />
   </div>
 );
 
@@ -34,19 +33,21 @@ export const ListItem = ({ program }: { program: Program }) => {
   const startDate = new Date(program.startAt);
   const endDate = new Date(program.endAt);
   const Day = startDate.getDate();
-  const startHour = startDate.getHours();
-  const startMinute = startDate.getMinutes();
-  const endHour = endDate.getHours();
-  const endMinute = endDate.getMinutes();
+  const startHour = startDate.getHours().toString().padStart(2, '0');
+  const startMinute = startDate.getMinutes().toString().padStart(2, '0');
+  const endHour = endDate.getHours().toString().padStart(2, '0');
+  const endMinute = endDate.getMinutes().toString().padStart(2, '0');
 
   return (
     <Terminal barTitle={program.group.name}>
       <div className={styles.gridItem}>
-        <div className={styles.imageWrapper}>
-          <ProgramLink program={program}>
-            <Image src={program.thumbnail} layout="fill" alt={program.title} />
-          </ProgramLink>
-        </div>
+        <ProgramLink program={program}>
+          <img
+            src={program.thumbnail}
+            alt={program.title}
+            className={styles.image}
+          />
+        </ProgramLink>
         <div className={styles.info}>
           <div>
             <p className={styles.programLabel}>企画名</p>
@@ -61,7 +62,7 @@ export const ListItem = ({ program }: { program: Program }) => {
           <div className={styles.description}>
             <p className={styles.caption}>日時</p>
             <p className={styles.descriptionText}>
-              神無月{Day === 29 ? '弐拾玖' : '三拾'}日<br />
+              10月{Day}日<br />
               {startHour}:{startMinute}～{endHour}:{endMinute}
             </p>
           </div>

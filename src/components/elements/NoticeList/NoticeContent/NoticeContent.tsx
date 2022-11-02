@@ -11,10 +11,8 @@ export const NoticeContent = ({ uuid }: { uuid: string }) => {
     const d = new Date(date);
     const month = (d.getMonth() + 1).toString().padStart(2, '0');
     const day = d.getDate().toString().padStart(2, '0');
-    const hour = d.getHours().toString().padStart(2, '0');
-    const minute = d.getMinutes().toString().padStart(2, '0');
 
-    return `${month}月${day}日 ${hour}:${minute}`;
+    return `${month}月${day}日`;
   };
 
   if (notice) {

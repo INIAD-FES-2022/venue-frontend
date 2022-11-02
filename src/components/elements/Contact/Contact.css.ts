@@ -8,6 +8,11 @@ export const contactStyle = {
     color: colors.accent_red_5,
   }),
 
+  contents: style({
+    padding: '50px',
+    fontSize: '1.2rem',
+  }),
+
   contact: style({
     display: 'flex',
     justifyContent: 'center',
@@ -15,10 +20,9 @@ export const contactStyle = {
 
   element: style({
     margin: '30px',
-    color: colors.accent_blue_1,
+    display: 'flex',
   }),
-
-  contents: style({
-    padding: '50px',
+  elementtxt: style({
+    marginRight: '15px',
   }),
 };

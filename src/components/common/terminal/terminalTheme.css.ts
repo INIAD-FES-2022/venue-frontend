@@ -31,7 +31,6 @@ export const terminalVars = createGlobalTheme(':root', {
     terminal_white: '#fafafa',
 
     terminal_frame_red: '#861b1f',
-    terminal_background_beige: 'rgba(254, 245, 234, 0.8)',
 
     // terminalTop
     terminalTop_background_lightBrown: '#5f4c4c',

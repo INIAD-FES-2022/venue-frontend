@@ -16,7 +16,7 @@ const aspectRatio = 1.5;
 
 export const TerminalTop: FC<Props> = ({
   barTitle = '',
-  barHeight = 24,
+  barHeight = 32,
   onDeleteButtonClicked,
   onMaximizeButtonClicked,
   onMinimizeButtonClicked,

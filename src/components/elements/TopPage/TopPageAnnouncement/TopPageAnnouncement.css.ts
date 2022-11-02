@@ -7,9 +7,9 @@ export const container = style({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  backgroundColor: '#FFF5EA',
   gap: '20px',
   padding: '20px',
+  paddingTop: '10px',
 });
 
 export const caption = style({
@@ -22,11 +22,26 @@ export const list = style({
 });
 
 export const content = style({
-  width: '100%',
-  padding: '20px 0 20px 0',
-  borderBottom: '1px solid #e0e0e0',
+  width: 'calc(100% - 40px)',
+  padding: '16px 0 8px 0',
+  margin: '0 20px 0 20px',
+  borderBottom: '1px solid rgba(53,25,22,0.5)',
+  textAlign: 'left',
 });
 
 export const title = style({
+  marginTop: '-0.4rem',
   fontSize: '1.5rem',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+});
+
+export const date = style({
+  fontSize: '1rem',
+});
+
+export const browseMore = style({
+  marginTop: '0.5rem',
+  marginBottom: '0rem',
+  fontSize: '1.8rem',
 });

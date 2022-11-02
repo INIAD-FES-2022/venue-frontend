@@ -1,40 +1,27 @@
 import { style } from '@vanilla-extract/css';
 
+export const container = style({
+  width: '100%',
+  maxWidth: '1000px',
+  margin: '50px auto',
+  padding: '0 20px',
+});
+
 export const attention = style({
-  borderStyle: 'solid',
-  borderColor: '#811C1F',
-  borderWidth: '10px',
   width: '100%',
   fontSize: '1rem',
-  backgroundColor: '#FEF5EA',
+  display: 'grid',
+  gridTemplateColumns: '100px 1fr',
+  justifyContent: 'start',
+  alignItems: 'center',
+  gap: '1rem',
+  rowGap: '5rem',
 });
 
-export const title = style({
-  fontSize: '2em',
-  color: '#fff',
-  backgroundColor: '#811C1F',
+export const attentionIcon = style({
   width: '100%',
-  padding: '20px',
-  textAlign: 'left',
-});
-
-export const container = style({
+  aspectRatio: '1 / 1',
   display: 'flex',
-  flexDirection: 'column',
-  margin: '10px 50px 10px 50px',
-});
-export const caption = style({
-  display: 'flex',
-  margin: '5% 0',
-});
-
-export const img = style({
-  padding: '20px',
-});
-
-export const txt = style({
-  display: 'flex',
-  listStyle: 'none',
-  textIndent: '2em',
-  padding: '30px',
+  justifyContent: 'center',
+  alignItems: 'center',
 });

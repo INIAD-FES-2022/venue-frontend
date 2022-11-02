@@ -8,7 +8,7 @@ export const container = style({
   alignItems: 'center',
   justifyContent: 'center',
   gap: '50px',
-  padding: '50px',
+  padding: '20px',
   overflowWrap: 'anywhere',
   fontFamily: `${fonts.japanese_1}, ${fonts.japanese_2}, ${fonts.japanese_3}, sans-serif`,
 });

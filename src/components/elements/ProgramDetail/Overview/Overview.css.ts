@@ -5,7 +5,7 @@ export const overview = style({
   'display': 'flex',
   'gap': '20px',
   '@media': {
-    'screen and (max-width: 450px)': {
+    'screen and (max-width: 550px)': {
       flexDirection: 'column',
     },
   },
@@ -14,14 +14,13 @@ export const overview = style({
 export const thumbnailWrapper = style({
   'width': '45%',
   '@media': {
-    'screen and (max-width: 450px)': {
+    'screen and (max-width: 550px)': {
       width: '100%',
     },
   },
 });
 
 export const thumbnail = style({
-  position: 'relative',
   width: '100%',
   aspectRatio: '16 / 9',
 });
