@@ -1,18 +1,18 @@
 import Head from 'next/head';
+import { NextPage } from 'next/types';
 import { Access } from '../components/elements/Access/Access';
 import { Layout } from '../components/layouts/Layout';
-import type { NextPageWithLayout } from './_app';
 
-const AccessPage: NextPageWithLayout = () => (
+const AccessPage: NextPage = () => (
   <>
     <Head>
       <title>access</title>
     </Head>
-    <Access />
+    <Layout title="来場方法">
+      <Access />
+    </Layout>
   </>
 );
-
-AccessPage.getLayout = (page) => <Layout title="来場方法">{page}</Layout>;
 
 // eslint-disable-next-line import/no-default-export
 export default AccessPage;

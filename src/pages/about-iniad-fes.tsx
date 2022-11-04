@@ -1,19 +1,17 @@
 import Head from 'next/head';
+import { NextPage } from 'next/types';
 import { Caption } from '../components/elements/About/About';
 import { Layout } from '../components/layouts/Layout';
-import type { NextPageWithLayout } from './_app';
 
-const AboutIniadFesPage: NextPageWithLayout = () => (
+const AboutIniadFesPage: NextPage = () => (
   <>
     <Head>
       <title>about fes</title>
     </Head>
-    <Caption />
+    <Layout title="いにあど-ふぇす">
+      <Caption />
+    </Layout>
   </>
-);
-
-AboutIniadFesPage.getLayout = (page) => (
-  <Layout title="いにあど-ふぇす">{page}</Layout>
 );
 
 // eslint-disable-next-line import/no-default-export
